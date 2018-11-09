@@ -1,0 +1,69 @@
+.SProjects
+	.container
+		h2.Title-2.SProjects-Title Реализованные проекты
+		
+		header.SProjects-Header.row.justify-content-between
+			.col-12.col-md-auto.SProjects-Tabs.SProjects-HeaderCol
+				button.SProjects-Current.d-flex.justify-content-between.align-items-center.d-xl-none.SProjects-Current.Button.Button_Size_Sm.Button_Theme_GrayBlue.active Промышленные озонаторы
+				.row.d-xl-flex.gutters-10
+					.col-12.col-xl-auto
+						button.d-xl-inline-block.SProjects-Tab.Button.Button_Size_Sm.Button_Theme_GrayBlue.active(data-cat="1") Промышленные озонаторы
+
+					.col-12.col-xl-auto
+						button.d-xl-inline-block.SProjects-Tab.Button.Button_Size_Sm.Button_Theme_GrayBlue(data-cat="2") промышленные увлажнители
+
+					.col-12.col-xl-auto
+						button.d-xl-inline-block.SProjects-Tab.Button.Button_Size_Sm.Button_Theme_GrayBlue(data-cat="3") озонаторы
+
+
+					.col-12.col-xl-auto
+						button.d-xl-inline-block.SProjects-Tab.Button.Button_Size_Sm.Button_Theme_GrayBlue(data-cat="4") прочее оборудование
+			.d-none.d-md-flex.align-items-start.col-auto.SProjects-HeaderCol
+				.row.gutters-10
+					.col-auto
+						a.SProjects-All.Button.Button_Theme_Blue.Button_Size_Sm(href="#") Все проекты 
+							i.fa.fa-chevron-right
+					.col-auto.d-flex
+						button.SProjects-Prev.Button.Button_Theme_GrayBlue.Button_Size_Sm: i.fa.fa-chevron-left
+						button.SProjects-Next.Button.Button_Theme_GrayBlue.Button_Size_Sm: i.fa.fa-chevron-right
+
+	.swiper-container.SProjects-Slider
+		.swiper-wrapper.no-gutters: each cat in [1, 2, 3, 4]
+
+			.non-swiper-slide.col-12.col-sm-6.col-lg-4.col-xl-3(data-cat=cat)
+				.CProject
+					a.CProject-Header(href="#")
+						img.img-fluid.CProject-Pr(src="images/projects/1.jpg" width="480" height="330" alt="")
+						.CProject-Title Озонирование воздуха для продления срока хранения продуктов питания
+						.CProject-Date.d-flex.align-items-center.justify-content-center.flex-column 12/08
+							span.CProject-Year 2018
+					.CProject-Desc #{cat} Потери при хранении могут быть колоссальными, так при хранении картофеля в овощехранилище, где могут хранится одновременно сотни тон овощной культуры, потеря даже нескольких процентов продукции выражается в сотнях тысяч рублей. 
+			.non-swiper-slide.col-12.col-sm-6.col-lg-4.col-xl-3(data-cat=cat)
+				.CProject
+					a.CProject-Header(href="#")
+						img.img-fluid.CProject-Pr(src="images/projects/2.jpg" width="480" height="330" alt="")
+						.CProject-Title Промышленная очистка сточных вод от фенолов
+						.CProject-Date.d-flex.align-items-center.justify-content-center.flex-column 28/06
+							span.CProject-Year 2018
+					.CProject-Desc #{cat} Промышленная очистка сточных вод нефтехимического предприятия от фенолов с использованием озонирующей установки OZ2000-S16 производительностью 54 кгОз/ч. г. Салават, Россия.
+			.non-swiper-slide.col-12.col-sm-6.col-lg-4.col-xl-3(data-cat=cat)
+				.CProject
+					a.CProject-Header(href="#")
+						img.img-fluid.CProject-Pr(src="images/projects/3.jpg" width="480" height="330" alt="")
+						.CProject-Title Комплексная система подготовки питьевой воды
+						.CProject-Date.d-flex.align-items-center.justify-content-center.flex-column 12/08
+							span.CProject-Year 2018
+					.CProject-Desc #{cat} Комплексная система подготовки питьевой воды, включая озоновую установку OZ 30LSC производительностью 30 гО3\ч в частном коттедже, Московская область.
+			.non-swiper-slide.col-12.col-sm-6.col-lg-4.col-xl-3(data-cat=cat)
+				.CProject
+					a.CProject-Header(href="#")
+						img.img-fluid.CProject-Pr(src="images/projects/4.jpg" width="480" height="330" alt="")
+						.CProject-Title Подготовка воды в плавательных бассейнах
+						.CProject-Date.d-flex.align-items-center.justify-content-center.flex-column 12/08
+							span.CProject-Year 2018
+					.CProject-Desc #{cat} Подготовка воды в плавательных бассейнах сети физкультурно-оздоровительных центров г. Москвы, Россия
+	
+	.container
+		.SProjects-Pagination.d-md-none
+		a.d-sm-none.SProjects-All.Button.Button_Theme_Blue.Button_Size_Sm(href="#") Все проекты 
+			i.fa.fa-chevron-right

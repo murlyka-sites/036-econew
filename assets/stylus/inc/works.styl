@@ -1,0 +1,151 @@
+
+.SWorks {
+	position relative
+	&-Title {
+		margin-bottom 20px 
+		
+		
+		@media (min-width $breakpoint-xl) {
+			position absolute
+			top 60px 
+			z-index 5 
+			color white
+		}
+	}
+}
+
+.CWork {
+	position relative
+	min-height 200px
+	padding 30px 25px 25px
+	background url('../images/work/bg.png') center / cover
+	text-align center
+	
+	@media (min-width $breakpoint-sm) {
+		text-align left
+	}
+	
+	@media (min-width $breakpoint-md) {
+		padding 30px 15% 
+	}
+	
+	@media (min-width $breakpoint-xl) {
+		padding 150px 40px 50px
+		height 100%
+	}
+	
+	@media (min-width $breakpoint-xxl) {
+		padding 150px 100px 50px 
+	}
+	
+	&::after,
+	&::before {
+		content ''
+		position absolute
+		bottom 0
+		left 50%
+		display block
+		transform translate(-50%, 50%) rotate(-45deg)
+		
+		@media (min-width $breakpoint-xl) {
+			left 100%
+			bottom 50%
+			transform translate(-50%, 50%) rotate(-135deg)
+		}
+	}
+
+	&::after {
+		content: ''
+		width 35px 
+		height 35px
+		z-index 5  
+		
+	}
+	
+	&::before {
+		border 2px solid white
+		border-top none
+		border-right none
+		width 10px 
+		height 10px
+		z-index 6 
+		
+
+	}
+	
+	&.bg-work-1,
+	&.bg-work-1::after,
+	&.bg-work-4 &-Pr {
+		background-color #38328e
+	}
+	
+	&.bg-work-2,
+	&.bg-work-2::after,
+	&.bg-work-3 &-Pr {
+		background-color #1c75bc
+	}
+	
+	&.bg-work-3,
+	&.bg-work-3::after,
+	&.bg-work-2 &-Pr {
+		background-color #3f9ae3
+	}
+	
+	&.bg-work-4,
+	&.bg-work-4::after,
+	&.bg-work-1 &-Pr {
+		background-color #63c2f5
+	}
+	
+	&.bg-work-4::after,
+	&.bg-work-4::before {
+		display none
+	}
+	
+	&.bg-work-4 {
+		min-height 0
+		
+		@media (min-width $breakpoint-sm) {
+			min-height 200px
+		}
+	}
+	
+
+	
+	&-Pr {
+		width 60px
+		height 60px
+		border-radius 50%
+		margin 0 auto 15px
+		
+		@media (min-width $breakpoint-sm) {
+			width 75px 
+			height 75px
+			margin 0 auto
+		}
+		
+		@media (min-width $breakpoint-md) {
+			width 110px 
+			height 110px
+		}
+		
+		@media (min-width $breakpoint-xl) {
+			margin 0 0 20px 
+		}
+	}
+	
+	&-Icon {
+		width 50%
+		height auto
+	}
+	
+	&-Desc {
+		font-size 13px
+		line-height 1.5
+		color white
+		
+		@media (min-width $breakpoint-md) {
+			font-size 14px 
+		}
+	}
+}

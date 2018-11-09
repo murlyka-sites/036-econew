@@ -1,0 +1,57 @@
+.Calc.row.flex-lg-nowrap.flex-lg-column.justify-content-lg-end
+	.Calc-Body: .container
+		h2.Title-2.Calc-Title Подберите озонатор по параметрам
+		.row.gutters-10
+			.col-12.col-sm-4.Calc-Cell
+				label.Label.Calc-Field
+					.Label-Title Длина (м.) 
+					.FieldSpinner.Label-Field
+						input.FieldSpinner-Field.Field(type="number" min="0" max="100")
+						.FieldSpinner-Buttons
+							button.FieldSpinner-Button.FieldSpinner-Button_Up
+								i.fa.fa-angle-up
+							button.FieldSpinner-Button.FieldSpinner-Button_Down
+								i.fa.fa-angle-down
+			.col-12.col-sm-4.Calc-Cell
+				label.Label.Calc-Field
+					.Label-Title Ширина (м.) 
+					.FieldSpinner.Label-Field
+						input.FieldSpinner-Field.Field(type="number" min="0" max="100")
+						.FieldSpinner-Buttons
+							button.FieldSpinner-Button.FieldSpinner-Button_Up
+								i.fa.fa-angle-up
+							button.FieldSpinner-Button.FieldSpinner-Button_Down
+								i.fa.fa-angle-down
+			.col-12.col-sm-4.Calc-Cell
+				label.Label.Calc-Field
+					.Label-Title Высота (м.) 
+					.FieldSpinner.Label-Field
+						input.FieldSpinner-Field.Field(type="number" min="0" max="100")
+						.FieldSpinner-Buttons
+							button.FieldSpinner-Button.FieldSpinner-Button_Up
+								i.fa.fa-angle-up
+							button.FieldSpinner-Button.FieldSpinner-Button_Down
+								i.fa.fa-angle-down
+			.col-12.Calc-Cell
+				label.Label.Calc-Field
+					.Label-Title Или общий объем (м³)
+					.FieldSpinner.Label-Field
+						input.FieldSpinner-Field.Field(type="number" min="0" max="100")
+						.FieldSpinner-Buttons
+							button.FieldSpinner-Button.FieldSpinner-Button_Up
+								i.fa.fa-angle-up
+							button.FieldSpinner-Button.FieldSpinner-Button_Down
+								i.fa.fa-angle-down
+	.Calc-Rec.CalcRec: .container
+		.CalcRec-Label Требуемая производительность:
+		.CalcRec-Val 20.0 грамм в час
+		.CalcRec-Available Доступная модель:
+		.CalcRecAvailable.row.align-items-center.gutters-10.flex-nowrap
+			.col-auto
+				img.CalcRecAvailable-Pr(src="images/calc.png" width="61" height="80" alt="Озоновая пушка ОЗ-А20")
+			.col: .row.gutters-5.flex-nowrap
+				.col-auto
+					i.fa.fa-arrow-left
+				.col
+					a.CalcRecAvailable-Title(href="#") Озоновая пушка ОЗ-А20
+					.CalcRecAvailable-Desc Настенный озонатор ОЗ-А20(Н)

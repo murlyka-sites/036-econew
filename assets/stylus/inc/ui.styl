@@ -1,0 +1,166 @@
+
+.Field {
+	display block
+	width 100%
+	height 44px
+	padding 0 20px
+	border none
+	font-size 15px 
+	font-weight 600
+	
+	&_O {
+		&_Gray {
+			outline 1px solid #d1d1d1
+			outline-offset -1px
+		}
+	}
+	
+	@media (min-width $mdl)  {
+		height 56px	
+		font-size 16px 
+	}
+}
+
+.FieldTextarea {
+	display block
+	width 100%
+	height 90px
+	padding 5px 20px
+	border none
+	font-size 15px 
+	font-weight 600
+	
+	&_O {
+		&_Gray {
+			outline 1px solid #d1d1d1
+			outline-offset -1px
+		}
+	}
+	
+	@media (min-width $beakpoint-md) {
+		height 105px 
+	}
+	
+	@media (min-width $breakpoint-lg) {
+		height 120px
+	}
+}
+
+.FieldSpinner {
+	position relative
+	
+	&-Field {
+		padding-right 30px 
+		-moz-appearance: textfield
+		
+		&::-webkit-inner-spin-button,
+		&::-webkit-outer-spin-button {
+			-webkit-appearance: none
+			margin: 0
+		}
+	}
+	
+	&-Buttons {
+		position absolute
+		right 10px
+		top 0
+		bottom 0
+		display flex
+		flex-direction column
+		justify-content center
+	}
+	
+	&-Button {
+		display flex
+		align-items center
+		justify-content center
+		padding 0
+		background transparent
+		border none 
+		color $blue-2
+		cursor pointer
+		
+		&:hover {
+			color $blue
+		}
+		
+		&:focus {
+			outline none
+		}
+	}
+}
+
+.Button {
+	display inline-block
+	text-decoration none
+	border none
+	font-size 14px 
+	line-height 1
+	font-weight 600 
+	text-align center
+	
+	&:hover {
+		text-decoration none
+	}
+	
+	&_Size {
+		&_Sm {
+			padding 11px 25px
+		}
+		
+		&_Md {
+			padding 18px 25px
+		}
+	}
+	
+	
+	
+	&_Theme {
+		&_GrayBlue {
+			background #f7f7f7
+			color #343434 
+			
+			&:hover {
+				background #E5E5E5 
+				color #1c75bc
+			}
+			
+			&:active,
+			&.active {
+				background #3f9ae3
+				color white
+			}
+		}
+		
+		&_Blue {
+			color white
+			background $blue linear-gradient(-10deg, $blue, $blue 33%, lighten($blue, 10) 33.5%, lighten($blue, 10) 67%, darken($blue, 10) 67.5% ) 0% 0% / 1000% 1000% no-repeat
+			transition .5s
+			
+			&:hover {
+				background-position 50% 50%
+				color white
+			} 
+			
+			&:active {
+				background-position 100% 100%
+				color white
+			}
+		}
+
+		&_Green {
+			color white
+			background $green linear-gradient(-10deg, $green, $green 33%, lighten($green, 10) 33.5%, lighten($green, 10) 67%, darken($green, 10) 67.5% ) 0% 0% / 1000% 1000% no-repeat
+			transition .5s
+			&:hover {
+				background-position 50% 50%
+				color white
+			} 
+			
+			&:active {
+				background-position 100% 100%
+				color white
+			}
+		}
+	}
+}

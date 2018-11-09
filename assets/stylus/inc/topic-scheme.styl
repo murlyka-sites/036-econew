@@ -1,0 +1,131 @@
+.TopicScheme {
+	padding 20px 0
+	
+	&_Group {
+		position relative
+		padding 60px 0 60px 30px
+		border-left 1px solid #d8d8d8
+		
+		&::after,
+		&::before {
+			content: '';
+			display block
+			width 90px 
+			height 30px
+			position absolute
+			left 0
+			border-right 1px solid #d8d8d8
+		}
+		
+		&::before {
+			top 0
+			border-top 1px solid #d8d8d8
+		}
+		
+		&::after {
+			bottom 0
+			border-bottom 1px solid #d8d8d8
+		}
+	}
+	
+	
+	
+	&-Figure {
+		position relative
+		margin 0 0 80px
+		
+		@media (min-width $sml) {
+			display flex
+			align-items center
+		}
+		
+		&::after {
+			content: '\f175'
+			display block
+			position absolute
+			left 60px
+			bottom -45px
+			transform translate(-50%)
+			color #d8d8d8
+			fa()
+			
+			@media (min-width $sm) {
+				left 70px
+			}
+			
+			@media (min-width $sml) {
+				left 90px 
+			}
+			
+			@media (min-width $mdl) {
+				left 100px
+			}
+		}
+		
+		&:last-child {
+			margin-bottom 0
+			
+			&::after {
+				display none
+			}
+		}
+		
+	}
+	
+	&-Pr {
+		margin-bottom 25px 
+		width 120px
+		height auto
+		border 5px solid #d8d8d8
+		border-radius 50%
+		
+		@media (min-width $sm) {
+			width 140px
+		}
+		
+		@media (min-width $sml) {
+			width 180px
+			flex none
+			margin-right 40px 
+			margin-bottom 0
+		}
+		
+		@media (min-width: $md) {
+		}
+		
+		@media (min-width: $mdl) {
+			width 200px
+			margin-right 90px 
+		}
+	}
+	
+	&-Caption {
+		display flex
+		align-items flex-start
+		
+		@media (min-width $sml) {
+			align-items center
+		}
+	}
+	
+	&-Step {
+		width 30px
+		font-size 36px 
+		text-align left
+		flex none
+		line-height 1 
+		
+		@media (min-width $mdl) {
+			width 50px
+			font-size 40px 
+		}
+	}
+	
+	&-Desc {
+		font-size 14px 
+		
+		@media (min-width $mdl) {
+			font-size 18px 
+		}
+	}
+}

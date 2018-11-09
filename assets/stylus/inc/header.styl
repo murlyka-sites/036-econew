@@ -1,0 +1,37 @@
+.Header {
+	background #F1F1F1
+	overflow: hidden
+	
+	@media (min-width $breakpoint-lg) {
+		padding-right 0 
+	}
+	
+	@media (min-width $breakpoint-xxl) {
+		padding 0 50px
+	}
+	
+	&-Label {
+		font-size 12px 
+	}
+	
+	&-Button {
+		
+		@media (max-width: ($breakpoint-lg - 1)) {
+			width: 44px
+			height: 44px
+			padding 0
+			display flex
+			align-items center
+			justify-content center
+		}
+		
+		@media (min-width $breakpoint-lg) {
+			width: 230px
+			margin-right -15px 
+		}
+		
+		@media (min-width $breakpoint-xxl) {
+			margin-right -65px 
+		}
+	}
+}

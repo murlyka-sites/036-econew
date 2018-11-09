@@ -1,0 +1,1564 @@
+$green = #69bc45;
+$green-2 = #009147;
+
+$blue = #1c75bc;
+$blue-2 = #3f9ae3;
+$dark = #323232;
+$dark-2 = #333333;
+$dark-3 = #343434;
+
+$gray = #808080;
+
+$max-xs = 767px;
+$sm = 768px;
+$max-sm = 991px;
+$sml = 992px;
+$max-sml = 1179px;
+$md = 1180px;
+$max-md = 1339px;
+$mdl = 1340px;
+$max-mdl = 1579px;
+$lg = 1580px
+$max-lg = 1899px
+$xlg = 1900px;
+
+$breakpoint-xs = 0;
+$breakpoint-sm = 576px;
+$breakpoint-md = 768px;
+$breakpoint-lg = 992px;
+$breakpoint-xl = 1200px;
+$breakpoint-xxl = 1600px;
+
+fa() {
+	font: normal normal normal 14px/1 FontAwesome;
+	font-size: inherit;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+
+@import 'inc/typo'
+@import 'inc/topic-collapse'
+@import 'inc/topic-scheme'
+@import 'inc/zoom-picture'
+*, *::after, *::before {
+	box-sizing: border-box
+}
+
+html {
+	
+	scroll-behavior smooth
+}
+
+.Page {
+	margin 0
+	font-family 'Open Sans', sans-serif
+	&_Lock {
+		overflow hidden
+	}
+}
+
+.AlertNumber {
+	position relative
+	border: 1px solid #dddddd;
+	padding 15px 20px 
+	
+	&::before {
+		content: ""
+		display block
+		width 31px
+		height 31px
+		position absolute
+		left 50%
+		top 0
+		transform translate(-50%, -50%)
+		background white url(../images/quote.png) center no-repeat
+		
+		@media (min-width $sml) {
+			left 220px
+		}
+	}
+	
+	@media (min-width $sml) {
+		display flex
+		align-items center
+	}
+	
+	&-Col {
+		padding 25px 10px
+		
+		@media (min-width $sml) {
+			padding 0 30px 
+		}
+		
+		@media (min-width $md) {
+			padding 0 40px 
+		}
+		
+		&:first-child {
+			border-bottom: 1px solid #dddddd;
+			
+			@media (min-width $sml) {
+				border-bottom none
+				border-right 1px solid #dddddd
+				width 160px 
+				flex none
+			}
+			
+			@media (min-width $md) {
+				width 200px
+			}
+		}
+	}
+	
+	&-Val {
+		text-align center
+		color: #3f9ae3;
+		font-size 60px 
+		font-weight 600 
+		
+		@media (min-width: $sm) {
+			font-size 80px 
+		}
+		
+		@media (min-width: $sml) {
+			font-size 90px 
+		}
+		
+		@media (min-width $mdl) {
+			font-size 100px 
+		}
+	}
+	
+	&-Units {
+		font-weight 400 
+		font-size 20px 
+	}
+	
+	&-Desc {
+		font-size 14px 
+		font-style italic 
+		
+		@media (min-width: $sm) {
+			font-size 16px 
+		}
+		
+		@media (min-width: $mdl) {
+			font-size 18px 
+		}
+	}
+}
+
+.Table {
+	width 100%
+	min-width: 530px
+	border: 2px solid #3f9ae3;
+	border-spacing 0
+	font-size 14px
+	
+	&-Wrap {
+		width: 100%
+		overflow-x: auto
+	}
+	
+	&-Hint {
+		display flex
+		align-items center
+		padding 15px 25px
+	}
+	
+	&-Icon {
+		margin-right 20px 
+	}
+	
+	&-Label {
+		font-size 12px 
+	}
+	
+	&-Row {		
+		--separator-color #dddddd
+		--separator-h-position center bottom
+		--separator-v-position right center
+		--separator-h-size calc(100% - 20px) 1px
+		--separator-v-size 1px 100%
+		
+		&:first-child {
+			--separator-v-size 1px calc(100% - 10px)
+			--separator-v-position right bottom
+		}
+
+		&:last-child {
+			--separator-h-size 0 0
+			--separator-v-size 1px calc(100% - 10px)
+			--separator-v-position right top
+		}
+		
+		&:only-child {
+			--separator-v-size 1px calc(100% - 20px)
+			--separator-v-position right center
+		}
+	}
+	
+	&-Head,
+	&-Cell {
+		
+		background-image linear-gradient(to bottom, var(--separator-color), var(--separator-color)), linear-gradient(to right, var(--separator-color), var(--separator-color))
+		background-position var(--separator-h-position), var(--separator-v-position)
+		background-size var(--separator-h-size), var(--separator-v-size)
+		background-repeat no-repeat
+		
+		&:last-child {
+			--separator-v-size 0 0
+		}
+	}
+	
+	&-Head {
+		--separator-color #1c75bc
+	}
+	
+	// &-Row:first-child {
+		
+	// 	--separator-v-size 1px calc(100% - 10px)
+	// 	--separator-v-position right bottom
+	// }
+	/*
+	&-Row:first-child &-Head,
+	&-Row:first-child &-Cell{
+		
+		&:last-child {
+			--separator-v-size 0 0
+		}
+	}
+	
+	&-Row:last-child &-Head,
+	&-Row:last-child &-Cell{
+		--separator-h-size 0 0
+		--separator-v-size 1px calc(100% - 10px)
+		--separator-v-position right top
+		
+		&:last-child {
+			--separator-v-size 0 0
+		}
+	}
+	
+	// &-Row:only-child &-He
+	
+
+	
+	&-Head {
+		--separator-color #1c75bc
+	}
+	*/
+	&-Head {
+		text-align left
+		color white 
+		padding 25px 20px
+		font-size 13px 
+		font-weight 600 
+		line-height 1.4
+		background-color #3f9ae3
+	}
+	
+	&-Body {
+		margin 10px 
+	}
+	
+	&-Cell {
+		padding 20px 
+	}
+	
+	
+
+	
+	// &-CellInner  {
+	// 	padding 10px
+	// 	border-bottom 1px solid #dddddd
+	// 	height 100%
+	// }
+	
+	// &-Row &-Cell {
+	// 	&::before {
+	// 		content ""
+	// 		display block
+	// 		height 1px 
+	// 		background #dddddd
+	// 		margin-left -10px
+	// 		margin-right -10px
+	// 		margin-top -20px
+	// 		margin-bottom 20px
+	// 	}
+	// }
+}
+
+.BigPicture {
+	padding-top 80px
+	padding-bottom 80px 
+	background-position center
+	background-size cover 
+	
+	&-Place {
+		padding 35px 15px 40px
+		background  rgba(63, 154, 227, 0.8) url(../images/bg-blocks.svg) right -400px center / 700px auto no-repeat
+		
+		color white
+		// opacity .8
+	}
+	
+	&-Title {
+		margin-bottom 5px 
+		font-size 16px 
+		font-weight 600 
+		
+		@media (min-width $sm) {
+			font-size 18px
+		}
+		
+		@media (min-width $sml) {
+			font-size 22px
+		}
+		
+		@media (min-width $mdl) {
+			font-size 24px 
+		}
+	}
+	
+	&-Table {
+		display table
+	}
+	
+	&-Tr {
+		display table-row 
+	}
+	
+	&-Td {
+		display table-cell 
+		vertical-align middle
+		padding 5px 
+		
+		&:first-child {
+			@media (min-width $md) {
+				padding-right 40px 
+			}
+		}
+	}
+	
+	&-Label {
+		font-size 14px 
+		font-weight 600 
+		
+		@media (min-width $sm) {
+			font-size 16px
+		}
+		
+		@media (min-width $sml) {
+			font-size 18px
+		}
+		
+	}
+	
+	&-Small {
+		font-size 12px 
+		font-weight 400 
+		
+		@media (min-width $sm) {
+			font-size 14px
+		}
+	}
+	
+	&-Val {
+		padding 10px 
+		min-width: 90px
+		border 1px solid rgba(255, 255, 255, 0.5)
+		font-size 16px 
+		text-align center
+		
+		@media (min-width $sm) {
+			font-size 18px 
+		}
+		
+		@media (min-width $sml) {
+			font-size 20px
+		}
+	}
+	
+	&-Units {
+		font-size 12px 
+		
+		@media (min-width $sm) {
+			font-size 14px
+		}
+	}
+}
+
+.Breadcrumbs {
+	margin 0
+	padding 0
+	list-style-type none
+	display block
+	font-size 12px 
+	font-weight 300
+	line-height 34px
+	
+	@media (min-width $sm) {
+		font-size 14px 
+	}
+	
+	&-Item {
+		display inline
+		cursor default
+		color #f1f1f1
+	}
+	
+	&-Link {
+		text-decoration none
+		color #8bc540
+		
+		&:hover {
+			color lighten(#8bc540, 40%)
+		}
+		&::after {
+			content ' \f105 '
+			fa()
+			
+			@media (min-width $sm)  {
+				margin-right 3px 
+			}
+		}
+	}
+}
+
+
+
+
+.Figure {
+	margin 0
+	
+	&-Pr {
+		margin-bottom 15px
+		
+		@media (min-width $sm) {
+			margin-bottom 20px			
+		}
+	}
+	
+	&-Caption {
+		@media (min-width $sm) {
+			padding-left 20px
+		}
+		
+		&_Small {
+			padding 0
+		}
+	}
+	
+	
+	
+	&-Title {
+		margin-bottom 10px 
+		font-size 12px 
+		font-weight 600 
+		
+		@media (min-width $sm) {
+			font-size 14px 
+		}
+	}
+}
+
+.Topic {
+	position relative
+	color #666666
+	font-size 14px 
+	
+	@media (min-width: $sm) {
+		font-size 16px 
+	}
+	
+	@media (min-width: $mdl) {
+		font-size 18px 
+	}
+	
+	&-Sticky {
+		@media (max-width ($breakpoint-md - 1)) {
+			position static !important
+		}
+		@media (min-width $breakpoint-md) {
+			position absolute
+			width 100%
+			left 0
+			top 0
+			// max-height 100vh
+			// overflow-y auto
+			// margin-bottom 100vh 
+			// float left
+			// margin-bottom 100px
+			// width 320px
+			// margin-left calc( (100% - 720px) / 2)
+				// padding-bottom 100vh 
+		}
+		
+		@media (min-width $breakpoint-lg) {
+			// margin-left calc( (100% - 960px) / 2)
+		}
+		
+		// @media (min-width: $breakpoint-xl) {
+		// 	margin-left calc( (100% - 1140px) / 2)
+		// 	width 450px
+		// }
+		
+		// @media (min-width: $breakpoint-xxl) {
+		// 	margin-left calc( (100% - 1560px) / 2)
+		// 	width 450px
+		// }
+	}
+	
+	&-Section {
+		
+	}
+	
+	&-Divider {
+		border-bottom: 1px solid #dddddd;
+	}
+
+	&-Group {
+		padding-top 40px
+		padding-bottom 40px 
+	}
+	
+	&-Title {
+		margin-bottom 30px 
+		border-left: 4px solid  #3f9ae3
+		padding-left 16px
+		
+		@media (min-width $sm) {
+			margin-left -20px
+		}
+	}
+	
+	&-SubTitle2 {
+		margin-bottom 25px 
+	}
+	
+	&-P {
+		margin-bottom 25px 
+	}
+	
+	&-Alert {
+		margin 30px 0
+	}
+	
+	&-SubTitle {
+		margin-bottom 15px 
+	}
+	
+	&-Table {
+		margin-bottom 20px 
+	}
+	
+	&-Blockquote {
+		margin 0 0 45px 
+	}
+	
+	&-SmallPicture {
+		margin-bottom 40px 
+	}
+	
+	&-Scheme {
+		margin-bottom 40px 
+	}
+	
+	&-Collapse {
+		margin-bottom 20px
+	}
+	
+	&-Ol,
+	&-Ul {
+		margin-bottom 35px 
+	}
+	
+	&-ChemicalFormula {
+		text-transform uppercase
+		font-size 14px 
+		font-weight 600
+		line-height 1.5
+		
+		@media (min-width $sm) {
+			font-size 16px 
+		}
+		
+		@media (min-width: $md) {
+			font-size 18px 
+		}
+	}
+}
+
+
+
+.NavStickyToCatalog {
+	display flex
+	align-items flex-end
+	padding 20px 
+	background: #251f78 url(../images/bg-card-sticky.png) no-repeat;
+	text-decoration none
+	
+	&:hover {
+		background-color: darken(#251f78, 5)
+		text-decoration none
+	}
+	
+	&-Pr {
+		width 81px
+		height: 122px
+		margin-right 10px 
+	}
+	
+	&-Desc {
+		font-size 14px 
+		color white
+		width 100%
+		
+    text-decoration none
+    // height 63px
+    // max-height: 3em
+		display: -webkit-box !important;
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: 3;
+		overflow: hidden;
+	}
+	
+	&-Divider {
+		margin 15px 0
+		height 1px
+		width 100%
+		max-width 150px
+		background  #4c44c9
+	}
+	
+
+	&-Link {
+		display block		
+		color: #ffde00;
+		font-size 12px 
+		font-weight 600	
+		text-transform uppercase 
+		text-align center
+		line-height 1
+		text-decoration none
+		
+		@media (min-width: $breakpoint-md) {
+			text-align left
+		}
+		
+		&:hover {
+			color: #ffde00;
+			text-decoration none
+		}
+	}
+}
+
+.Link {
+	color #1c75bc
+	text-decoration none
+	
+	&:hover {
+		color #3f9ae3
+	}
+}
+
+.Label {
+	display block
+	text-align left
+	
+	&-Title {
+		font-size 12px 
+		margin-bottom 4px 
+		
+		@media (min-width $lg) {
+			font-size 14px 
+		}
+	}
+	
+	&-Field {
+		
+	}
+}
+ 
+.TopicSliderThumb {
+	width 100%
+	
+	&-Slide {
+		height 65px
+		background-size cover
+		background-position center
+		
+		@media (min-width: $breakpoint-lg) {
+			height 100px
+		}
+		
+		@media (min-width: $breakpoint-xl) {
+			height 150px
+		}
+		
+		&_Active {
+		 outline 3px solid #3f9ae3
+		 outline-offset -3px
+		}
+	}
+}
+
+.TopicSliderMain {
+	width 100%
+	margin-bottom 15px !important
+	
+	&-Slide {
+		height 400px
+		background-size cover
+		background-position center
+		padding 15px 
+		
+		@media (min-width $breakpoint-lg) {
+			height 600px
+			padding 20px
+		}
+	}
+	
+	&-Inner {
+		padding 20px 
+		background-color: rgba(63, 154, 227, .8);
+		color white
+		max-width 620px
+		
+		@media (min-width $breakpoint-lg) {
+			padding 40px
+		}
+	}
+	
+	&-Title {
+		display flex
+		align-items center
+		font-size 16px 
+		font-weight 600 
+		cursor pointer
+		
+		&::after {
+			content '\f078'
+			fa()
+			margin-left auto
+			
+			@media (min-width $breakpoint-lg) {
+				display none
+				font-size 22px 
+			}
+			
+			@media (min-width $breakpoint-xl) {
+				font-size 24px 
+			}
+		}
+		
+		@media (min-width: $breakpoint-lg) {
+			cursor text
+		}
+		
+		&_Open&::after {
+			content '\f077'
+		}
+	}
+	
+	&-Desc {
+		display none
+		padding 35px 0 0
+		font-size 14px 
+		
+		&_Open {
+			display block
+		}
+		
+		@media (min-width $breakpoint-lg) {
+			display block
+			padding 15px 0 0
+		}
+	}
+	
+	&-Pr {
+		width 100%
+		height 400px
+		object-fit cover
+		
+		@media (min-width $breakpoint-lg) {
+			height 600px	
+		}
+	}
+	
+	&-Next,
+	&-Prev {
+		display none
+		width 50px
+		height 50px
+		background white
+		color #333
+		border-radius 50%
+		border none
+		position absolute
+		top 50%
+		z-index 5 
+		font-size 25px 
+		transform translate(0, -50%)
+		
+		@media (min-width $breakpoint-lg) {
+			display block
+		}
+		
+		&:hover {
+			background darken(white, 10%)
+		}
+	}
+	
+	&-Prev {
+		left 20px
+		padding-right 10px
+	}
+	
+	&-Next {
+		right 20px
+		padding-left 10px
+	}
+}
+
+.Icon-Contact {
+	width 15px
+	margin-right 8px 
+}
+
+.Text-Contact {
+	font-size 14px 
+}
+
+.Text-Phone {
+	font-size 14px 
+	font-weight 600
+			
+	@media (min-width: 768px) {
+		font-size 16px 
+	}
+}
+
+.Text-Schedule {
+	font-size 10px 
+	
+	@media (max-width $breakpoint-sm) {
+		max-width: 120px
+	}
+}
+
+
+.NavFoo {
+	display none 
+	margin 0
+	padding 0 60px 0 0
+	font-size 12px
+	line-height 1.2 
+	list-style-type none
+	
+
+	
+	
+	@media (min-width $sm) {
+		font-size 13px 
+	}
+	
+	@media (min-width $sml) {
+		padding 0
+		max-width 320px
+	}
+	
+	&_Open {
+		display block
+	}
+	
+	@media (min-width $sml) {
+		display block	
+	}
+	
+	&-Item {
+		margin-bottom 15px 
+	}
+}
+
+.Resistance {
+	display flex
+	align-items center
+	
+	
+	
+	&-Rank {
+		display inline-flex
+		align-items center
+		justify-content center
+		width: 48px
+		height 48px
+		border-radius: 50%
+		background black 
+		font-size 20px 
+		font-weight 600 
+		color white
+		margin-right 16px 
+		flex: none
+		
+		&_A {
+			background #3f9ae3
+		}
+		
+		&_B {
+			background #3382c2
+		}
+		
+		&_C {
+			background #205d8f
+		}
+		
+		&_D {
+			background #154368
+		}
+	}
+	
+	
+	&-Label {
+		
+	}
+}
+
+.icheckbox {
+	width 20px
+	height 20px
+	display inline-flex
+	align-items center
+	justify-content center
+	background white
+	
+	&::before {
+		display none
+		content '\f00c'
+		fa()
+		font-size 12px 
+		color #FFF 
+		color: #009147;
+	} 
+	
+	&.checked::before {
+		display block
+	}
+}
+
+
+
+.ToOrder {
+	background #3f9ae3 
+	background-image url(../images/bg-blocks.svg),  url(../images/bg-blocks.svg);
+	background-position  right -400px center, -450px center 
+	background-repeat no-repeat
+	background-size 700px auto
+	color white
+	padding-top 55px 
+	padding-bottom 55px
+	
+	&_Bg_2 {
+		background #009147 
+		background-image url(../images/bg-to-order-2.png)
+	}
+	
+	&-Title {
+		margin-bottom 10px 
+	}
+	
+	&-Field {
+		margin-bottom 20px
+	}
+	
+	&-Button {
+		display block
+		width 270px
+		margin 25px auto 0
+		
+		@media (min-width $sm) {
+			margin 25px 0 0
+		}
+		
+		@media (min-width $mdl) {
+			width 300px
+		}
+	}
+	
+}
+
+.FormPolitic {
+	font-size 12px 
+	text-align left
+	line-height 1.5
+	 
+	&-Link {
+		text-decoration underline
+		color inherit
+		
+		&:hover {
+			text-decoration none
+		}
+	}
+}
+
+.Checkbox {
+	width 20px
+	height 20px
+	display inline-flex
+	align-items center
+	justify-content center
+	cursor pointer
+	
+	&_Theme {
+		&_White {
+			background white
+		}
+		
+		&_Gray {
+			background #f2f2f2 
+		}
+	}
+	
+	&::before {
+		opacity 0
+		content '\f00c'
+		fa()
+		font-size 12px 
+		color #FFF 
+		color: #009147;
+	} 
+	
+	&_Checked::before {
+		opacity 1
+	}
+}
+
+
+.swiper-pagination {
+	position static 
+	
+	&-bullet {
+		width 10px
+		height 10px
+		margin 0 3px 
+		background #e5e5e5
+		opacity 1
+		
+		&:focus {
+			outline none
+		}
+		
+		&-active {
+			background #1c75bc
+		}
+	}
+	
+}
+
+.non-swiper-slide {
+	display none
+}
+
+.Up {
+	position fixed
+	right 15px
+	bottom: 20px
+	width 25px 
+	height 25px
+	padding 5px
+	margin-right 5px
+	z-index 9   
+	display block
+	background: #1c75bc;
+	box-shadow: 0 3px 35px rgba(1, 2, 4, 0.2); 
+	transform rotate(45deg)
+	color white
+	text-decoration none
+	display flex
+	align-items center
+	justify-content center
+	user-select none
+	
+	@media (min-width: $sml) {
+		
+		width 50px 
+		height 50px
+		margin-right 10px
+		padding 15px
+	}
+	
+	&:hover {
+		background: lighten(#1c75bc, 25%);
+	}
+	
+	&:active {
+		background darken(#1c75bc, 25%) 
+	}
+	
+	&-Icon {
+		transform: rotate(-45deg)
+		width 100%
+		height auto
+	}
+}
+
+.Popup {	
+	&_Order {
+		width 640px
+	}
+	
+	&.fancybox-content {
+		text-align center
+		padding 25px
+		
+		@media (min-width: $breakpoint-sm) {
+			padding 40px 
+		}
+	}
+	
+	&-Title {
+		font-size 21px 
+		margin-bottom 10px
+		color #333
+		
+		@media (min-width: $breakpoint-sm) {
+			font-size 36px 
+			margin-bottom 20px
+		}
+	}
+	
+	&-Slogan {
+		color #333
+		font-size 13px 
+		font-weight 600
+		
+		@media (min-width $breakpoint-sm) {
+			font-size 16px
+		}
+	}
+	
+	&-Field {
+		margin-bottom 25px 
+		color #7f7f7f
+	}
+	
+	&-Politic {
+		color #666
+		margin-bottom 25px 
+	}
+	
+	&-Button {
+		margin-top 25px 
+		width 275px
+	}
+}
+
+@import "inc/foo.styl"
+@import "inc/bottom.styl"
+
+
+.iCheck-helper { 
+}
+
+.container {
+	max-width none
+	padding 0 8.3%
+}
+
+.inner {
+	@media (min-width: $breakpoint-md) {
+		margin-left 320px
+	}
+	
+	@media (min-width: $breakpoint-xl) {
+		margin-left 450px 
+	}
+	
+	@media (min-width: $breakpoint-xxl) {
+		margin-left 25%
+	}
+}
+
+.flex-xxl-nowrap {
+	@media (min-width $breakpoint-xxl) {
+		flex-wrap nowrap
+	}
+}
+
+@media (min-width: $breakpoint-xxl) {
+  .col-xxl {
+    -ms-flex-preferred-size: 0;
+    flex-basis: 0;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    max-width: 100%;
+  }
+  .col-xxl-auto {
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    width: auto;
+    max-width: 100%;
+  }
+  .col-xxl-1 {
+    -ms-flex: 0 0 8.333333%;
+    flex: 0 0 8.333333%;
+    max-width: 8.333333%;
+  }
+  .col-xxl-2 {
+    -ms-flex: 0 0 16.666667%;
+    flex: 0 0 16.666667%;
+    max-width: 16.666667%;
+  }
+  .col-xxl-3 {
+    -ms-flex: 0 0 25%;
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+  .col-xxl-4 {
+    -ms-flex: 0 0 33.333333%;
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+  }
+  .col-xxl-5 {
+    -ms-flex: 0 0 41.666667%;
+    flex: 0 0 41.666667%;
+    max-width: 41.666667%;
+  }
+  .col-xxl-6 {
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+  .col-xxl-7 {
+    -ms-flex: 0 0 58.333333%;
+    flex: 0 0 58.333333%;
+    max-width: 58.333333%;
+  }
+  .col-xxl-8 {
+    -ms-flex: 0 0 66.666667%;
+    flex: 0 0 66.666667%;
+    max-width: 66.666667%;
+  }
+  .col-xxl-9 {
+    -ms-flex: 0 0 75%;
+    flex: 0 0 75%;
+    max-width: 75%;
+  }
+  .col-xxl-10 {
+    -ms-flex: 0 0 83.333333%;
+    flex: 0 0 83.333333%;
+    max-width: 83.333333%;
+  }
+  .col-xxl-11 {
+    -ms-flex: 0 0 91.666667%;
+    flex: 0 0 91.666667%;
+    max-width: 91.666667%;
+  }
+  .col-xxl-12 {
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  .order-xxl-first {
+    -ms-flex-order: -1;
+    order: -1;
+  }
+  .order-xxl-last {
+    -ms-flex-order: 13;
+    order: 13;
+  }
+  .order-xxl-0 {
+    -ms-flex-order: 0;
+    order: 0;
+  }
+  .order-xxl-1 {
+    -ms-flex-order: 1;
+    order: 1;
+  }
+  .order-xxl-2 {
+    -ms-flex-order: 2;
+    order: 2;
+  }
+  .order-xxl-3 {
+    -ms-flex-order: 3;
+    order: 3;
+  }
+  .order-xxl-4 {
+    -ms-flex-order: 4;
+    order: 4;
+  }
+  .order-xxl-5 {
+    -ms-flex-order: 5;
+    order: 5;
+  }
+  .order-xxl-6 {
+    -ms-flex-order: 6;
+    order: 6;
+  }
+  .order-xxl-7 {
+    -ms-flex-order: 7;
+    order: 7;
+  }
+  .order-xxl-8 {
+    -ms-flex-order: 8;
+    order: 8;
+  }
+  .order-xxl-9 {
+    -ms-flex-order: 9;
+    order: 9;
+  }
+  .order-xxl-10 {
+    -ms-flex-order: 10;
+    order: 10;
+  }
+  .order-xxl-11 {
+    -ms-flex-order: 11;
+    order: 11;
+  }
+  .order-xxl-12 {
+    -ms-flex-order: 12;
+    order: 12;
+  }
+  .offset-xxl-0 {
+    margin-left: 0;
+  }
+  .offset-xxl-1 {
+    margin-left: 8.333333%;
+  }
+  .offset-xxl-2 {
+    margin-left: 16.666667%;
+  }
+  .offset-xxl-3 {
+    margin-left: 25%;
+  }
+  .offset-xxl-4 {
+    margin-left: 33.333333%;
+  }
+  .offset-xxl-5 {
+    margin-left: 41.666667%;
+  }
+  .offset-xxl-6 {
+    margin-left: 50%;
+  }
+  .offset-xxl-7 {
+    margin-left: 58.333333%;
+  }
+  .offset-xxl-8 {
+    margin-left: 66.666667%;
+  }
+  .offset-xxl-9 {
+    margin-left: 75%;
+  }
+  .offset-xxl-10 {
+    margin-left: 83.333333%;
+  }
+  .offset-xxl-11 {
+    margin-left: 91.666667%;
+  }
+  
+  .d-xxl-none {
+    display: none !important;
+  }
+  .d-xxl-inline {
+    display: inline !important;
+  }
+  .d-xxl-inline-block {
+    display: inline-block !important;
+  }
+  .d-xxl-block {
+    display: block !important;
+  }
+  .d-xxl-table {
+    display: table !important;
+  }
+  .d-xxl-table-row {
+    display: table-row !important;
+  }
+  .d-xxl-table-cell {
+    display: table-cell !important;
+  }
+  .d-xxl-flex {
+    display: -ms-flexbox !important;
+    display: flex !important;
+  }
+  .d-xxl-inline-flex {
+    display: -ms-inline-flexbox !important;
+    display: inline-flex !important;
+  }
+}
+
+.gutters-5 {
+	margin-left -5px
+	margin-right -5px  
+	
+	& > .col,
+	& > [class*="col-"] {
+		padding-right: 5px;
+		padding-left: 5px;
+	}
+}
+
+.gutters-10 {
+	margin-left -10px
+	margin-right -10px  
+	
+	& > .col,
+	& > [class*="col-"] {
+		padding-right: 10px;
+		padding-left: 10px;
+	}
+}
+
+@import 'inc/ui'
+@import 'inc/alert'
+@import 'inc/nav-sticky'
+@import 'inc/nav-top'
+@import 'inc/header'
+@import 'inc/main'
+@import 'inc/edge'
+@import 'inc/projects'
+@import 'inc/works'
+@import 'inc/clients'
+
+.SMainProduct {
+	background #f7f7f7 url(../images/mainproduct/bg.png) left bottom / 672px auto no-repeat
+	text-align center
+	padding 30px 0 0
+	
+	@media (min-width $breakpoint-lg) {
+		text-align left
+	}
+
+	&-Pr {
+		width 100px
+		height auto
+		
+		@media (min-width $breakpoint-md) {
+			width 205px 
+		}
+	}
+	
+	&-Title {
+		margin-bottom 15px
+	}
+	
+	&-Button {
+		display block
+		width 100%
+		margin-bottom 10px 
+		text-transform uppercase
+		padding-left 15px 
+		padding-right 15px 
+		
+		@media (min-width $breakpoint-xl) {
+			font-size 12px 
+		}
+	}
+	
+	&-Cat {
+		padding 15px 
+		margin-bottom 15px
+		background-color: #e5e5e5;
+		
+		@media (min-width $breakpoint-md) {
+			background none
+			padding 0
+			margin-bottom 35px  
+		}
+	}
+	
+	&-Inner {
+	}
+	
+	&-Nav {
+		margin-top 15px
+	}
+}
+
+.ListCat {
+	list-style-type none
+	margin 0
+	padding 0
+	text-align left
+	
+	&-Link {		
+		position relative
+		padding-left 15px
+		
+		&:hover {
+			text-decoration none
+		}
+		
+		&::before {
+			content ''
+			display inline-block
+			width 7px 
+			height 7px
+			background currentColor 
+			transform translate(0, -50%) rotate(45deg)
+			position absolute
+			left 0px
+			top 50%
+			
+		}
+		
+
+	}
+	
+
+}
+
+.CMainProductNav {
+	color #3f9ae3
+	padding 15px 20px
+	
+	@media (min-width $breakpoint-md) {
+		text-align left
+	}
+	
+	&:nth-child(1) {
+		background-color: #e5e5e5;
+	}
+	
+	&:nth-child(2) {
+	
+	}
+	
+	&:nth-child(3) {
+		background-color: #d8d8d8;
+	}
+	
+	&:nth-child(4) {
+		background #cccccc 
+	}
+	
+	&:hover,
+	&.active {
+		background #3f9ae3
+		color white 
+	}
+	
+	&:focus {
+		outline none
+	}
+	
+	&-Pr {
+		fill none
+		stroke currentColor
+		stroke-linejoin round
+		stroke-linecap round
+		width 35px 
+		height 48px		
+	}
+	
+	&-Title {
+		font-size 12px
+		font-weight 600  
+		text-align left
+		text-transform uppercase
+	}
+}

@@ -1,0 +1,368 @@
+doctype html
+html(lang="ru")
+	head
+		include _/head.pug
+
+
+	body.Page#page
+		include _/header
+		include _/nav
+		.MainGroup: .container-fluid: .row.align-items-stretch
+			.col-12.Main
+				.container: .row: .col-12.col-lg-8
+					.Main-Content
+						ul.Main-Breadcrumbs.Breadcrumbs
+							li.Breadcrumbs-Item
+								a.Breadcrumbs-Link(href="#") Главная
+							li.Breadcrumbs-Item
+								a.Breadcrumbs-Link(href="#") Применение оборудования
+							li.Breadcrumbs-Item
+								a.Breadcrumbs-Link(href="#") зонаторы
+							li.Breadcrumbs-Item Обезжелезивание и удаление марганца из воды с помощью озонирования
+						
+						h1.Main-Title.Title-1 Обезжелезивание и удаление марганца из воды с помощью озонирования
+						a.Main-Button.Button.Button_Size_Sm.Button_Theme_Blue(href="#") каталог озонаторов 
+							i.fa.fa-arrow-right
+			.col-12.col-lg-4.MainGroup-Calc
+				include _/calc
+
+		.Topic
+			.Topic-Sticky
+				.container: .row: .col-12.col-md-6.col-lg-5.col-xl-4.col-xxl-3.offset-xxl-1
+
+					.NavSticky
+						.NavSticky-Info Используйте кнопки ниже, чтобы перейти к нужному разделу 
+							i.fa.fa-arrow-circle-o-down
+						.NavSticky-Choosen
+							button.NavSticky-Current Использование озонирования при удалении железа и марганца из воды
+							ul.NavSticky-List
+								li.NavSticky-Item
+									a.NavSticky-Link.NavSticky-Link_Active(href="#Topic1") Использование озонирования при удалении железа и марганца из воды
+								li.NavSticky-Item
+									a.NavSticky-Link(href="#Topic2") ОБЗОР ТЕХНОЛОГИИ ДЕМАНГАНАЦИИ И ОБЕЗЖЕЛЕЗИВАНИЯ
+								li.NavSticky-Item
+									a.NavSticky-Link(href="#Topic3") ХИМИЯ ВЗАИМОДЕЙСТВИЯ ОЗОНА С ЖЕЛЕЗОМ И МАРГАНЦЕМ
+								li.NavSticky-Item
+									a.NavSticky-Link(href="#Topic4") СХЕМЫ УДАЛЕНИЯ ЖЕЛЕЗА И МАРГАНЦА ИЗ ВОДЫ С ОПИСАНИЕМ
+						a.NavSticky-ToCatalog.NavStickyToCatalog(href="#")
+							img.d-none.d-md-block.NavStickyToCatalog-Pr(src="images/card-sticky.png", alt="")
+							.col
+								div
+									.d-none.d-md-block.NavStickyToCatalog-Desc(style="-webkit-box-orient: vertical") Станции озонирования воды для удаления железа и марганца производительностью от 1м3/час
+								.d-none.d-md-block.NavStickyToCatalog-Divider
+								.NavStickyToCatalog-Link(href="#") перейти в каталог 
+									i.fa.fa-arrow-right
+						.NavSticky-Info или заполните опросный лист ниже и мы подберем для вас оборудование 
+							i.fa.fa-arrow-circle-o-down 
+						.NavSticky-Foo
+							.NavSticky-Cell: a.NavSticky-Button.Button.Button_Size_Md.Button_Theme_Blue(href="#") опросный лист 
+								i.fa.fa-arrow-right
+							.NavSticky-Cell: a.NavSticky-Button.Button.Button_Size_Md.Button_Theme_Green(href="#ToOrder") Оставить заявку
+			.Topic-Section#Topic1
+				.Topic-Group: .container: .row: .col-12.offset-md-6.col-md-6.offset-lg-5.col-lg-7.offset-xl-4.col-xl-7.offset-xxl-4.col-xxl-7
+					h2.Topic-Title.Title-2 Использование озонирования при удалении железа и марганца из воды
+					p.Topic-P.P
+						| Железо и марганец - наиболее часто встречающиеся металлические 
+						a.Link(href="#") примеси
+						|  в природной воде, причем чаще всего они встречаются вместе. Хотя железо и не является токсичным веществом, но его присутствие в воде приводит к ухудшению ее 
+						a.Link(href="#") органолептических
+						|  и вкусовых свойств и появлению бурого осадка на поверхностях, вступающих в контакт с водой. Марганец же является загрязнителем, который относится к категории опасных веществ.
+					p.Topic-P.P Оба загрязнителя должны быть устранены из воды до указанного в стандартах уровня. В частности, для питьевой воды норма содержания марганца и железа указана в 
+						a.Link(href="#") СанПиН 2.1.4.1074-01
+						|  «Питьевая вода. Гигиенические требования к качеству воды централизованных систем питьевого водоснабжения» и СанПиН 2.1.4.1116-02 «Питьевая вода. Гигиенические требования к качеству воды, расфасованной в емкости».
+					.Topic-Alert.Alert
+						.Alert-Title п. 4.2 СанПиН 2.1.4.1116-2 
+							small.Alert-Elaboration (п. 3.4 СанПиН 2.1.4.1074-01)
+						.Alert-Quote Безвредность воды по химическому составу определяется ее соответствием нормативам по содержанию токсичных металлов I, II и III классов опасности.
+						.Alert-Foo
+							.Alert-Cell
+								.Alert-Name Марганец 
+									small.Alert-Units (Mn)
+								.Alert-Val 0.05 (01)
+							.Alert-Cell
+								.Alert-Name Железо 
+									small.Alert-Units (Fe, суммарно)
+								.Alert-Val 0.3 (03)
+					h3.Topic-SubTitle.Title-4 Система оценки озоностойкости
+					.Topic-Table.Table-Wrap
+						table.Table
+							thead
+								tr.Table-Row
+									th.Table-Head Степень озоностойкости
+									th.Table-Head Комментарий
+							tbody.Table-Body
+								tr.Table-Row
+									td.Table-Cell
+										.Resistance
+											.Resistance-Rank.Resistance-Rank_A A
+											.Resistance-Label Отличная
+									td.Table-Cell Озон ни как не влияет на эти материалы.
+								tr.Table-Row
+									td.Table-Cell
+										.Resistance
+											.Resistance-Rank.Resistance-Rank_B B
+											.Resistance-Label Хорошая
+									td.Table-Cell Озон оказывает незначительное действие на эти материалы. При длительном использовании эти материалы будут подвержены коррозии.
+								tr.Table-Row
+									td.Table-Cell
+										.Resistance
+											.Resistance-Rank.Resistance-Rank_C C
+											.Resistance-Label Плохая
+									td.Table-Cell Озон разрушит эти материалы в течении нескольких недель. Использование материалов при любой концентрации озона приводит к коррозии.
+								tr.Table-Row
+									td.Table-Cell
+										.Resistance
+											.Resistance-Rank.Resistance-Rank_D D
+											.Resistance-Label Очень плохая
+									td.Table-Cell Озон никак не влияет на эти материалы.
+					.Table-Hint.d-lg-none
+						img.Table-Icon(src="images/table-hint.png" width="41" height="35" alt="")
+						.Table-Label Перетащите таблицу влево, чтобы увидеть её полностью
+					p.Topic-P.P Часто железо и марганец содержатся в воде в виде органических соединений, что значительно усложняет процесс фильтрации. Стандартные методы обезжелезивания и деманганации воды (аэрация, известкование, катионирование) в этом случае неэффективны. В России эта проблема особенно актуальна в нефтеносных районах, где вода практически всегда содержит большое количество примесей органических веществ (нефтепродуктов) и растворенных газов, имеет повышенную цветность и мутность.
+				
+				.Topic-BigPicture.BigPicture(style="background-image: url(images/big-picture-1.jpg)"): .container: .row: .col-12.offset-md-6.col-md-6.offset-lg-5.col-lg-6.offset-xl-4.col-xl-7.offset-xxl-4.col-xxl-4
+					.BigPicture-Place
+						.BigPicture-Title Содержание марганца в воде:
+						.BigPicture-Table
+							.BigPicture-Tr
+								.BigPicture-Td
+									.BigPicture-Label -ДО 
+										small.BigPicture-Small обработки озоном и фильтрации
+								.BigPicture-Td
+									.BigPicture-Val 0,46
+										span.BigPicture-Units  мг/л
+							.BigPicture-Tr
+								.BigPicture-Td
+									.BigPicture-Label -ПОСЛЕ 
+										small.BigPicture-Small обработки озоном и фильтрации
+								.BigPicture-Td
+									.BigPicture-Val 0,08
+										span.BigPicture-Units  мг/л
+				
+				.Topic-Group: .container: .row: .col-12.offset-md-6.col-md-6.offset-lg-5.col-lg-7.offset-xl-4.col-xl-7.offset-xxl-4.col-xxl-7
+					p.Topic-P.P В вышеуказанных случаях необходимо предварительное окисление органических соединений с помощью озона. Окисляя комплексные соединения, озон вызывает осаждение железа и марганца. После чего остается только отфильтровать воду от выпавших в осадок металлов при помощи угольных и песчаных фильтров или путем длительного отстаивания.
+				.container: .row: .col-12.offset-md-6.col-md-6.offset-lg-5.col-lg-7.offset-xl-4.col-xl-7.offset-xxl-4.col-xxl-7: .Topic-Divider
+			.Topic-Section#Topic2
+				.Topic-Group: .container: .row: .col-12.offset-md-6.col-md-6.offset-lg-5.col-lg-7.offset-xl-4.col-xl-7.offset-xxl-4.col-xxl-7
+					h2.Topic-Title.Title-2 Обзор технологий деманганации и обезжелезивания
+					p.Topic-P.P Для окисления железа или марганца, содержащихся в комплексной связи с анионными группами и веществами, придающими воде повышенную цветность, весьма целесообразно применение озона. Окисляя названные комплексные соединения, озон устраняет цветность воды и вызывает осаждение железа и марганца. Процесс окисления преобразует растворимые соли в нерастворимые, поэтому необходимо последующее фильтрование или отстаивание воды для освобождения ее от выпадающих осадков. Окисление металлов озоном эффективно протекает при любых значениях pH, встречающихся в природных водах.
+					blockquote.Topic-Blockquote.Blockquote Неустойчивость, как известно, быстро разивается, если солитон асферично трансформирует плоскополяризованный квант. Квантовое состояние случайно. Разрыв изотропно индуцирует кристалл, хотя этот факт нуждается в дальнейшей тщательной экспериментальной проверке. Магнит стабилизирует вихревой бозе-конденсат. Возмущение плотности заряжает эксимер.
+						.Blockquote-Author Галилео Галилей
+					.Topic-SmallPicture.Figure
+						a.Figure-Pr.ZoomPicture(href="images/small-picture-1.jpg" data-fancybox)
+							img.Picture(src="images/small-picture-1.jpg")
+							//- .ZoomPicture-Inner
+								.ZoomPicture-Button.Button.Button_Theme_Green.Button_Size_Md
+									i.fa.fa-search-plus
+									|  увеличить
+						figcaption.Figure-Caption
+							.Figure-Title Волна трансформирует гидродинамический удар 
+					h3.Topic-SubTitle.Title-3 Озонирование воды:
+					.Topic-Scheme.TopicScheme
+						figure.TopicScheme-Figure
+							img.TopicScheme-Pr(src="images/scheme-1.jpg" width="" height="" alt="")
+							figcaption.TopicScheme-Caption
+								.TopicScheme-Step 1
+								.TopicScheme-Desc Вода с повышенным содержанием железа и марганца подается в контактную емкость
+						figure.TopicScheme-Figure
+							img.TopicScheme-Pr(src="images/scheme-2.jpg" width="" height="" alt="")
+							figcaption.TopicScheme-Caption
+								.TopicScheme-Step 2
+								.TopicScheme-Desc В контактной ёмкости происходит озонирование воды путем барботированием. В результате железо и марганец выпадают в осадок
+						figure.TopicScheme-Figure
+							img.TopicScheme-Pr(src="images/scheme-3.jpg" width="" height="" alt="")
+							figcaption.TopicScheme-Caption
+								.TopicScheme-Step 3
+								.TopicScheme-Desc В контактной ёмкости происходит озонирование воды путем барботированием. В результате железо и марганец выпадают в осадок
+						figure.TopicScheme-Figure
+							img.TopicScheme-Pr(src="images/scheme-4.jpg" width="" height="" alt="")
+							figcaption.TopicScheme-Caption
+								.TopicScheme-Step 4
+								.TopicScheme-Desc Для финишной фильтрации воды используется угольный фильтр
+					p.Topic-P.P Для окисления железа или марганца, содержащихся в комплексной связи с анионными группами и веществами, придающими воде повышенную цветность, весьма целесообразно применение озона. Окисляя названные комплексные соединения, озон устраняет цветность воды и вызывает осаждение железа и марганца. Процесс окисления преобразует растворимые соли в нерастворимые, поэтому необходимо последующее фильтрование или отстаивание воды для освобождения ее от выпадающих осадков. Окисление металлов озоном эффективно протекает при любых значениях pH, встречающихся в природных водах.
+					p.Topic-P.P Что касается марганца, то превращение Mn под воздействием кислорода из воздуха в двухвалентный нерастворимый гидрат Mn(OH)4 требует при отсутствии катализатора величины pH>10. Между тем озон вызывает полное осаждение Mn при отсутствии катализатора уже при величине pH=6.5.
+					p.Topic-P.P Ситуация усложняется при высоких концентрациях марганца в воде, поскольку озон будет окислять Mn+2 до Mn+7, который вступая в реакцию с кислородом образует растворимый в воде перманганат MnO4. 
+						br
+						| С такой ситуацией столкнулись на городской станции очистки воды в городе Аштоне (Англия). 
+				
+
+				.Topic-BigPicture.BigPicture.Container(style="background-image: url(images/big-picture-2.jpg)"): .container: .row: .col-12.offset-md-6.col-md-6.offset-lg-5.col-lg-6.offset-xl-4.col-xl-7.offset-xxl-4.col-xxl-4
+					.BigPicture-Place
+						.BigPicture-Title Содержание марганца в воде в г. Аштон:
+						.BigPicture-Table
+							.BigPicture-Tr
+								.BigPicture-Td
+									.BigPicture-Label -ДО 
+										small.BigPicture-Small обработки озоном и фильтрации
+								.BigPicture-Td
+									.BigPicture-Val 0,5
+										span.BigPicture-Units  мг/л
+							.BigPicture-Tr
+								.BigPicture-Td
+									.BigPicture-Label -ПОСЛЕ 
+										small.BigPicture-Small обработки озоном и фильтрации
+								.BigPicture-Td
+									.BigPicture-Val 0,05
+										span.BigPicture-Units  мг/л
+				
+				.Topic-Group: .container: .row: .col-12.offset-md-6.col-md-6.offset-lg-5.col-lg-7.offset-xl-4.col-xl-7.offset-xxl-4.col-xxl-7
+					h3.Topic-SubTitle.Title-3 Двойное озонирование воды
+					p.Topic-P.P Для устранения такого количества марганца используется технологическая схема двойного озонирования воды: первичное озонирование исходной воды, фильтрование и вторичное озонирование фильтрата. 
+						br
+						| При такой схеме обработки марганец, окисляясь, переходит в нерастворимую форму, и осадок удаляется фильтрованием. Цветность воды снижается до нормативной величины: 
+					.Topic-Scheme.TopicScheme.TopicScheme_Group
+						figure.TopicScheme-Figure
+							img.TopicScheme-Pr(src="images/scheme-1.jpg" width="" height="" alt="")
+							figcaption.TopicScheme-Caption
+								.TopicScheme-Step 1
+								.TopicScheme-Desc Вода с повышенным содержанием железа и марганца подается в контактную емкость
+						figure.TopicScheme-Figure
+							img.TopicScheme-Pr(src="images/scheme-2.jpg" width="" height="" alt="")
+							figcaption.TopicScheme-Caption
+								.TopicScheme-Step 2
+								.TopicScheme-Desc В контактной ёмкости происходит озонирование воды путем барботированием. В результате железо и марганец выпадают в осадок
+						figure.TopicScheme-Figure
+							img.TopicScheme-Pr(src="images/scheme-3.jpg" width="" height="" alt="")
+							figcaption.TopicScheme-Caption
+								.TopicScheme-Step 3
+								.TopicScheme-Desc В контактной ёмкости происходит озонирование воды путем барботированием. В результате железо и марганец выпадают в осадок
+						figure.TopicScheme-Figure
+							img.TopicScheme-Pr(src="images/scheme-4.jpg" width="" height="" alt="")
+							figcaption.TopicScheme-Caption
+								.TopicScheme-Step 4
+								.TopicScheme-Desc Для финишной фильтрации воды используется угольный фильтр
+						figure.TopicScheme-Figure
+							img.TopicScheme-Pr(src="images/scheme-5.jpg" width="" height="" alt="")
+							figcaption.TopicScheme-Caption
+								.TopicScheme-Step 5
+								.TopicScheme-Desc Повторное озонирование отфильтрованной воды
+				.Topic-Group: .container: .row: .col-12.offset-md-6.col-md-6.offset-lg-5.col-lg-7.offset-xl-4.col-xl-8
+					.TopicSlider.Topic-Slider
+						.swiper-container.TopicSliderMain
+							.swiper-wrapper
+								each i in [1,2,3,4,1,2,3,4]
+									.swiper-slide.TopicSliderMain-Slide(style="background-image: url(images/slider-1.jpg)")
+										.TopicSliderMain-Inner
+											.TopicSliderMain-Title Заголовок для фотографии в одну строку
+											.TopicSliderMain-Desc Экситон трансформирует квант, и это неудивительно, если вспомнить квантовый характер явления. При облучении инфракрасным лазером взрыв индуцирует экранированный солитон. Частица по определению ускоряет термодинамический пульсар. 
+										//- img.TopicSliderMain-Pr(src="images/slider-1.jpg", alt="")
+							button.TopicSliderMain-Next.fa.fa-angle-right
+							button.TopicSliderMain-Prev.fa.fa-angle-left
+						.swiper-container.TopicSliderThumb
+							.swiper-wrapper
+								.swiper-slide.TopicSliderThumb-Slide.TopicSliderThumb-Slide_Active(style="background-image: url(images/slider-1.jpg)")
+								each i in [1,2,3,4,1,2,3]
+									.swiper-slide.TopicSliderThumb-Slide(style="background-image: url(images/slider-1.jpg)")
+										//- img.img-fluid.TopicSliderThumb-Pr(src="images/slider-1.jpg", alt="")
+				.Topic-Group: .container: .row: .col-12.offset-md-6.col-md-6.offset-lg-5.col-lg-7.offset-xl-4.col-xl-7.offset-xxl-4.col-xxl-7
+					p.Topic-P.P Необходимое для обезжелезивания и 
+						a.Link(href="#") деманганации
+						|  количество озона подбирается опытным путем. Обычно используется следующее соотношение: 1 мг озона на один мг железа и 4 мг озона на 1 мг марганца. Более точные значения могут быть получены путем проведения экспериментов с образцами воды и запуска пилотной установки.
+					.Topic-Alert.AlertNumber
+						.AlertNumber-Col
+							.AlertNumber-Val 4
+								span.AlertNumber-Units  мг
+						.AlertNumber-Col
+							.AlertNumber-Desc Количество озона, обычно используемое для окисления 4 мг железа или 1 мг марганца
+				.container: .row: .col-12.offset-md-6.col-md-6.offset-lg-5.col-lg-7.offset-xl-4.col-xl-7.offset-xxl-4.col-xxl-7: .Topic-Divider
+			.Topic-Section#Topic3
+				.Topic-Group: .container: .row: .col-12.offset-md-6.col-md-6.offset-lg-5.col-lg-7.offset-xl-4.col-xl-7.offset-xxl-4.col-xxl-7
+					h2.Topic-Title.Title-2 Химия взаимодействия озона с железом и марганцем
+					p.Topic-P Рассмотрим химию взаимодействия озона с железом и марганцем.
+					.Topic-Collapse.TopicCollapse
+						.TopicCollapse-Header
+							.TopicCollapse-Icon: img.Picture(src="images/collapse-icon-1.png" width="54" height="54" alt="" aria-hidden="true")
+							.TopicCollapse-Title РЕАКЦИЯ МЕЖДУ РАСТВОРЕННЫМ МАРГАНЦЕМ И ОЗОНОМ
+						.TopicCollapse-Body
+							p.P.Topic-ChemicalFormula.TopicCollapse-P 
+								| Mn+2 + O3 + H2O → MnO2↓ + 2H+ + O2
+								br
+								| 2Mn+2 + 5O3 + 3H2O ↔ 2MnO4- + 5O2 + 6H+
+							p.P.TopicCollapse-P Из реакции следует, что в отсутствие органических примесей необходимо 0,87 мг озона на 1 мг марганца.
+								br
+								| Из реакции видно, что озон окисляет Mn+2 до Mn+4, который вступая в реакцию с кислородом, образует нерастворимый в воде диоксид марганца MnO2. Диоксид марганца может быть удален механическими фильтрами. Реакция наиболее эффективно протекает при значениях pH около 8.
+							p.P.TopicCollapse-P Остаточный озон будет окислять Mn+2 до Mn+7, который вступая в реакцию с кислородом, будет образовывать растворимый в воде перманганат MnO4-. Если в воде присутствуют органические соединения, то через некоторое время перманганат распадется до диоксида марганца MnO2.
+							p.P.TopicCollapse-P Наличие органических соединений увеличивает количество озона, необходимого для очистки воды, поскольку часть озона задействуется для окисления органических соединений.
+
+					.Topic-Collapse.TopicCollapse
+						.TopicCollapse-Header
+							.TopicCollapse-Icon: img.Picture(src="images/collapse-icon-2.png" width="56" height="46" alt="" aria-hidden="true")
+							.TopicCollapse-Title Варианты установки прибора
+						.TopicCollapse-Body
+							.GridPicture
+								.GridPicture-Cell
+									figure.Figure
+										a.Figure-Pr.ZoomPicture(href="images/grid-figure-1.jpg" data-fancybox)
+											img.Picture.Picture_O(src="images/grid-figure-1.jpg")
+										
+										figcaption.Figure-Caption.Figure-Caption_Small
+											.Figure-Title Напольное размещение увлажнителя
+								.GridPicture-Cell
+									figure.Figure
+										a.Figure-Pr.ZoomPicture(href="images/grid-figure-2.jpg" data-fancybox)
+											img.Picture.Picture_O(src="images/grid-figure-2.jpg")
+										
+										figcaption.Figure-Caption.Figure-Caption_Small
+											.Figure-Title Размещение увлажнителя на полке
+				.container: .row: .col-12.offset-md-6.col-md-6.offset-lg-5.col-lg-7.offset-xl-4.col-xl-7.offset-xxl-4.col-xxl-7: .Topic-Divider
+			.Topic-Section#Topic4
+				.Topic-Group: .container: .row: .col-12.offset-md-6.col-md-6.offset-lg-5.col-lg-7.offset-xl-4.col-xl-7.offset-xxl-4.col-xxl-7
+					h2.Topic-Title.Title-2 Схема удаления железа и марганца из воды с описанием
+					h3.Topic-SubTitle2.Title-4 Производство озона:
+					ol.Topic-Ol.Ol
+						li.Ol-Item Атмосферный воздух очищается от сильных загрязнителей и частиц при помощи фильтра предварительной очистки.
+						li.Ol-Item Очищенный воздух поступает в концентратор кислорода, где преобразуется в газовую смесь с 85 – 95 % содержанием кислорода.
+						li.Ol-Item Кислород подается в генератор озона. В его ячейках под действием коронного разряда из кислорода производится озон.
+					h3.Topic-SubTitle2.Title-4 Озонирование и фильтрация воды для крупных объектов
+					figure.Figure
+						a.Figure-Pr.ZoomPicture(href="images/small-picture-2.jpg" data-fancybox)
+							img.Picture(src="images/small-picture-2.jpg")
+							.ZoomPicture-Inner
+								.ZoomPicture-Button.Button.Button_Theme_Green.Button_Size_Md
+									i.fa.fa-search-plus
+									|  увеличить
+						figcaption.Figure-Caption 
+							h4.Figure-Title.Title-5 Пояснения к рисунку:
+							ul.Topic-Ul.Ul
+								li.Ul-Item Вода с высоким содержанием железа и марганца поступает в контактную емкость.
+								li.Ul-Item В контактной емкости происходит барботирование воды (пропускание пузырьков газа через слой жидкости). В результате железо и марганец окисляются до нерастворимых соединений.
+								li.Ul-Item Часть соединений осаживается прямо в контактной емкости. Периодически происходит промывка контактной емкости для удаления осадка.
+								li.Ul-Item Другая часть соединений существует в виде взвешенных в воде частиц. После контактной емкости озонированная вода проходит механическую очистку в угольном и песчаном фильтрах, где из нее удаляются остатки металлов.
+								li.Ul-Item Нерастворенный озон из контактной емкости сбрасывается в атмосферу через деструктор озона, чтобы избежать превышения предельно допустимых концентраций озона в воздухе помещения (цеха).
+				
+
+
+
+
+
+
+			.ToOrder#ToOrder: .container: .row
+				form.col-12.offset-md-6.col-md-6.offset-lg-5.col-lg-7.offset-xl-4.col-xl-6.offset-xxl-4.col-xxl-4
+					h2.Title-2.ToOrder-Title Заказать звонок
+					.row.gutters-10
+						.col-12.col-sm-6.col-md-12.col-lg-6
+							label.Label.ToOrder-Field
+								.Label-Title Ваше имя
+								input.Label-Field.Field(type="text")
+						.col-12.col-sm-6.col-md-12.col-lg-6
+							label.Label.ToOrder-Field
+								.Label-Title Телефон
+								input.Label-Field.Field(type="tel")
+					.row.align-items-baseline.gutters-10
+						.col-auto
+							input.Checkbox-White(type="checkbox")
+						.col.FormPolitic.ToOrder-Politic
+							| Заполняя и отправляя форму, я даю своё согласие на обработку моих персональных данных в соответствии с ФЗ «О персональных данных» (№152-ФЗ от 27.07.2006), на условиях и для целей, определенных 
+							a.FormPolitic-Link(href="#") Политикой конфиденциальности
+								| .
+					//- .ToOrderPolitic
+						.ToOrderPolitic-Col.ToOrderPolitic-Col_Checkbox
+							input(type="checkbox")
+						.ToOrderPolitic-Col.ToOrderPolitic-Col_Label
+							.ToOrderPolitic-Label Заполняя и отправляя форму, я даю своё согласие на обработку моих персональных данных в соответствии с ФЗ «О персональных данных» (№152-ФЗ от 27.07.2006), на условиях и для целей, определенных 
+								a.ToOrderPolitic-Link(href="#") Политикой конфиденциальности
+								| .
+					button.ToOrder-Button.Button.Button_Theme_Green.Button_Size_Md Отправить
+
+		include _/foo
+		include _/scripts

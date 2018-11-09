@@ -1,0 +1,152 @@
+.MainGroup {
+	position relative
+	
+	&-Calc {
+		@media (min-width $breakpoint-lg) {
+			position absolute
+			height 100%
+			right 0
+			width 33.3%
+			max-width 450px
+		}
+	}
+}
+
+.Main {
+	background url(../images/bg-main-sml.jpg) left center / cover
+	color white
+	
+	@media (min-width: $breakpoint-lg) {
+		min-height 650px 
+	}
+	
+	&-Content {
+		padding 35px 0 100px
+		max-width: 620px
+		
+		@media (min-width $breakpoint-xxl) {
+			max-width 100% 
+		}
+	}
+	
+	&-Breadcrumbs {
+		margin-bottom 50px 
+	}
+	
+	&-Title {
+		margin-bottom 50px
+	}
+	
+	&-Button {
+		text-transform uppercase
+	}
+}
+
+.Calc {
+	background #3f9ae3
+	color white	
+	
+	@media (min-width $breakpoint-lg) {
+		height 100%
+	}
+	
+	&-Body {
+		width 100%
+		padding 25px 0
+		
+		@media (min-width $breakpoint-lg) {
+			padding 25px 5px
+		}
+		
+		@media (min-width $breakpoint-xlg) {
+			padding 40px 20px
+		}
+	}
+	&-Title {
+		margin-bottom 15px 
+		
+		@media (min-width $breakpoint-lg) {
+			font-size 30px 
+			margin-bottom 55px
+		}
+	}
+	
+	&-Cell {
+		margin-bottom 10px
+	}
+	
+	&-Rec {
+		width 100%
+		background #1c75bc
+	}
+}
+
+.CalcRec {
+	padding 25px 0
+	
+	@media (min-width $breakpoint-lg) {
+		padding 25px 5px
+	}
+	
+	@media (min-width: $breakpoint-xl) {
+		padding 25px 20px
+	}
+	
+	&-Label {
+		font-size 13px 
+		
+		@media (min-width $sml) {
+			font-size 14px
+		}
+	}
+	
+	&-Val {
+		font-size 15px 
+		font-weight 600 
+		
+		@media (min-width $sml) {
+			font-size 16px
+		}
+	}
+	
+	&-Available {
+		margin-top 15px
+		padding 15px 0 10px
+		border-top 1px solid #3f9ae3
+		font-size 13px 
+		
+		@media (min-width $sml) {
+			font-size 14px
+		}
+	}
+}
+
+.CalcRecAvailable {
+	
+	&-Title {
+		display block
+		position relative
+		font-size 15px 
+		font-weight 600 
+		text-decoration none
+		color inherit
+		
+		&:hover {
+			color inherit
+		}
+		
+		@media (min-width $breakpoint-xl) {
+			font-size 16px
+		}
+	}
+	
+	&-Desc {
+		font-size 15px 
+		font-weight 600 
+		color: #6acbf9;
+		
+		@media (min-width $breakpoint-xl) {
+			font-size 16px
+		}
+	}
+}

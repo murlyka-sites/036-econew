@@ -1,0 +1,76 @@
+.TopicCollapse {
+	&-Header {
+		display flex
+		align-items center
+		padding 20px 
+		background #1c75bc
+		color white 
+		font-size 13px 
+		font-weight 600
+		text-transform uppercase
+		cursor pointer
+		
+		@media (min-width $breakpoint-lg) {
+			font-size 14px 
+		}
+		
+		&::after {
+			content '\f078'
+			margin-left auto 
+			flex none
+			fa()
+		}
+		
+		&_Open {
+			&::after {
+				transform rotate(180deg)
+			}
+		}
+	}
+	
+	&-Icon {
+		display none
+		
+		@media (min-width $md) {
+			width 60px
+			height 60px
+			border-radius: 50%
+			margin-right 20px 
+			background #3F9AE3 
+			flex none
+			display flex
+			align-items center
+			justify-content center
+			padding 15px 
+		}
+		
+		@media (min-width: $breakpoint-xxl) {
+			width 80px
+			height 80px
+		}
+	}
+	
+	&-Body {
+		display none
+		background-color: #f1f1f1;
+		padding 20px
+		border-bottom: 2px solid #1c75bc
+		font-size 13px
+		
+		@media (min-width: $breakpoint-lg) {
+			padding 30px 
+			font-size 14px 
+		}
+		
+		@media (min-width: $md) {
+		}
+		
+		&_Open {
+			display block
+		} 
+	}
+	
+	&-P {
+		margin-bottom 1em
+	}
+}

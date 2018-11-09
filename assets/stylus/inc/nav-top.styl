@@ -1,0 +1,302 @@
+.NavMobile {
+	display none
+	position fixed
+	left 0
+	right 0
+	bottom 0
+	background white
+	z-index 10
+	overflow hidden
+	
+	&-Container {
+		height 100%
+		transform translate(0, 0)
+		transition 1s 
+		
+		&_Level2 {
+			transform translate(-100%, 0)
+		}
+		
+		&_Level3 {
+			transform translate(-200%, 0)
+		}
+		
+		@media (min-width: $breakpoint-lg) {
+			transform none
+			transition none
+		}
+	}
+	
+	&-Level {
+		border-top 1px solid #f7f7f7
+		height 100%
+		width 100%
+		overflow hidden auto
+		display flex
+		padding 15px 15px 5px
+		flex-direction column
+		flex none
+		
+		&:nth-child(even) {
+			background #f7f7f7
+		}
+		
+		@media (min-width: $breakpoint-lg) {
+			&:nth-child(1) {
+				display none
+			}
+			
+			&:nth-child(2) {
+				width 320px
+			}
+			
+			&:nth-child(3) {
+				width 100%
+				flex auto
+			}
+		}
+	}
+	
+	&-Back,
+	&-Close {
+		border none
+		display flex
+		align-items center
+		justify-content center
+		width: 30px
+		height: 30px
+		background transparent
+		flex none
+	}
+	
+	&-Back {		
+		@media (min-width: $breakpoint-lg) {
+			display none
+		}
+	}
+	
+	&-Close {
+		position absolute
+		bottom 0
+		left 0
+		margin auto auto 0
+		flex none
+		color #343434
+		width 100%
+		order 10
+	}
+}
+
+.Nav {
+	position relative
+	padding 10px 0
+	
+	@media (min-width: $breakpoint-lg) {
+		justify-content flex-start
+		padding 0
+	}
+	
+	@media (min-width $breakpoint-xxl) {
+		padding 0 50px
+	}
+	
+	&-Logo {
+		width 130px
+		height auto
+		
+		@media (min-width $breakpoint-lg)  {
+		}
+		
+		@media (min-width $breakpoint-xl) {
+			width 180px
+		}
+	}
+	
+	&-Burger {
+		display block
+		padding 0
+		line-height 0
+		background transparent
+		fill #3f9ae3
+	}
+}
+
+.NavTop {
+	position relative
+	margin -15px -15px 0
+	font-size 13px 
+	text-transform uppercase
+	
+	@media (min-width $breakpoint-lg) {
+		margin 0
+	}
+	
+	@media (min-width $breakpoint-xl) {
+		font-size 14px  
+	}
+	
+	&-List {
+		height 100%
+		list-style-type none
+		padding 0
+		margin 0
+		
+		@media (min-width: $breakpoint-lg) {
+			display flex
+			align-items stretch
+		}
+	}
+	
+	&-Item {
+		background white		
+		box-shadow 15px 1px 0 0 #e5e5e5
+		margin-bottom 1px
+		
+		@media (min-width: $breakpoint-lg) {
+			box-shadow none
+			margin 0
+		}
+	}
+	
+	&-Link {
+		display flex
+		align-items center
+		justify-content space-between
+		text-decoration none
+		padding 15px
+		font-weight 600 
+		color #3f9ae3
+		
+		@media (min-width: $breakpoint-lg) {
+			padding 20px 10px
+		}
+		
+		@media (min-width: $breakpoint-xl) {
+			padding 30px 20px
+		}
+		
+		&::after {
+			content '\f054'
+			margin-left 5px 
+			fa()
+			
+			@media (min-width: $breakpoint-lg) {
+				content '\f078'
+			}
+		}
+		
+		
+		&:hover,
+		&_Active {
+			box-shadow 0 0 0 1px #fff
+			background #1c75bc 
+			color white
+			text-decoration none
+			
+			@media (min-width: $breakpoint-lg) {
+				background #3f9ae3
+				box-shadow none
+			}
+		}
+	}
+	
+	&-Sub {
+		display none
+	}
+}
+
+.NavTopSub {
+	font-size 13px
+	background-color: #f7f7f7;
+	font-weight 600
+	
+	&-Title {
+		margin-bottom 10px
+		text-transform uppercase
+	}
+	
+	&-List {
+		margin 0 -15px 25px
+		padding 0
+		list-style-type none
+	}
+	
+	&-Link {
+		display flex
+		justify-content space-between
+		align-items center
+		color #3f9ae3
+		padding 5px 10px 5px 35px
+		text-decoration none
+		
+		&::after {
+			opacity 0
+			content '\f054'
+			margin-left 5px 
+			fa()
+		}
+		
+		&:hover,
+		&_Active {
+			color: #1c75bc;
+			background-color: #e5e5e5;
+			text-decoration none
+			
+			&::after {
+				opacity 1
+			}
+		}
+	}
+	
+	&-Content {
+		display none
+		position absolute
+		top 0
+		left 100%
+		width 100%
+		height 100%
+		
+		&_Open {
+			display block
+		}
+	}
+}
+
+.NavTopSubContent {
+	font-weight 400
+	font-size 13px 
+	
+	&-Title {
+		margin-bottom 25px 
+		font-size 18px 
+		font-weight 600 
+	}
+	
+	&-List {
+		list-style-type none
+		padding 0
+		margin 0 0 25px
+	}
+	
+	&-Item {
+		margin-bottom 5px 
+	}
+	
+	&-Link {
+		text-decoration none
+		color: #3f9ae3;
+		
+		&:hover {
+			color #1c75bc
+		}
+	}
+	
+	&-Count {
+		color #7f7e7e
+	}
+	
+	&-Info {
+		margin 50px 0 30px
+		color: #818181;
+	}
+}

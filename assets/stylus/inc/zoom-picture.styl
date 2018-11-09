@@ -1,0 +1,67 @@
+.ZoomPicture {
+	display block
+	position relative
+	
+	&-Inner {
+		opacity 0
+		position absolute
+		top 0
+		left 0
+		width 100%
+		height 100%
+		display flex
+		align-items center
+		justify-content center
+		background  rgba(63, 154, 227, 0.8)
+		z-index 2 
+		
+		@media (pointer: fine) {
+			&:hover {
+				opacity 1
+			}
+		}
+	}
+	
+	&-Button {
+		width 165px
+		text-transform uppercase
+	}	
+}
+
+.Picture {
+	display block
+	height auto
+	width 100%
+	max-width 100%
+	
+	&_O {
+		@media (pointer: fine) {
+			&:hover {
+				outline: 3px solid #009bdc
+				outline-offset -3px
+				
+				@media (min-width: $sm) {
+					outline-width: 5px
+					outline-offset -5px
+				}
+			}
+		}
+	}
+}
+
+.GridPicture {
+	@media (min-width $sml) {
+		display flex
+		margin -10px
+	}
+	
+	&-Cell {
+		padding 10px 0
+		
+		@media (min-width $sml) {
+			width 50%
+			padding 10px 
+			flex none
+		}
+	}
+}

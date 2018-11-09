@@ -1,0 +1,78 @@
+.Foo {
+	padding-top 40px
+	padding-bottom 10px
+	background #f1f1f1 
+	
+	&-Logo {
+		height auto
+		
+		@media (min-width $breakpoint-lg) {
+			width: 170px
+			margin-bottom 24px 
+		}
+		
+		@media (min-width $breakpoint-xl) {
+			width 185px
+			margin-bottom 9px 
+		}
+	}
+	
+	&-Address {
+		color #666
+		font-size 13px 
+	}
+	
+	&-Col {		
+		@media (min-width: $breakpoint-lg) {
+			margin-bottom 15px 
+		}
+		
+		@media (min-width $breakpoint-xxl) {
+			flex: 0 0 auto;
+			width: auto;
+			max-width: none
+		}
+	}
+	
+	&-Title {
+		display flex
+		align-items center
+		justify-content space-between
+		margin 10px 0
+		line-height 1
+		font-size 12px 
+		font-weight 600 
+		text-transform uppercase
+		color $dark-2
+		
+		@media (min-width $breakpoint-md) {
+			font-size 13px 
+		}
+		
+		&::after {
+			display block
+			margin-left 15px
+			flex none
+			text-align center
+			content: '\f078'
+			
+			fa()
+		}
+		
+		&_Active::after {
+			color $blue
+			transform: rotate(180deg)
+		}
+		
+		@media (min-width $breakpoint-lg) {
+			display block
+			height 3em
+			font-size 16px
+			max-width: 300px
+			
+			&::after {
+				display none
+			}
+		}
+	}
+}

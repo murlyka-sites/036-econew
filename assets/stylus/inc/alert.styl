@@ -1,0 +1,117 @@
+.Alert {
+	padding 25px 20px
+	border 1px solid #ddd
+	
+	@media (min-width $md) {
+		padding 40px
+	}
+	
+	&-Title {
+		margin-bottom 15px 
+		font-size 18px 
+		font-weight 600 
+		
+		@media (min-width $sm) {
+			font-size 20px 
+		}
+	}
+	
+	&-Elaboration {
+		display block
+		font-size 14px 
+		font-weight 400 
+		
+		@media (min-width $breakpoint-xl) {
+			display inline
+		}
+	}
+	
+	&-Quote {
+		padding 5px 0 5px 10px 
+		border-left 4px solid #3f9ae3
+		font-size 14px 
+		line-height 1.5 
+		font-style italic 
+		
+		@media (min-width $sm) {
+			font-size 16px 
+		}
+	}
+	
+	&-Foo {
+		@media (min-width $sml) {
+			display flex
+			padding-top 30px
+		}
+	}
+	
+	&-Cell {
+		position relative
+		margin-bottom 1px 
+		padding 12px 0
+		
+		@media (min-width $sml) {
+			padding 5px 40px
+			border-right 1px solid #dddddd
+			
+
+		}
+		
+		&:first-child {
+			padding-left 0 
+		}
+		
+		&:last-child {
+			padding-right 0
+			border none
+		}
+		
+		&::after {
+			display block
+			content ""
+			height 1px
+			position absolute
+			bottom -1px
+			background #dddddd
+			width 60px 
+			
+			@media (min-width $sml) {
+				display none
+			}
+		}
+		
+		&:last-child {
+			margin-bottom 0 
+			
+			&::after {
+				display none
+			}
+		}
+	}
+	
+	&-Name {
+		margin-bottom 15px 
+		font-size 20px 
+		
+		@media (min-width $sml) {
+			margin-bottom 5px 
+		}
+	}
+	
+	&-Units {
+		font-size 16px 
+		
+		@media (min-width $sm) {
+			font-size 18px 
+		}
+	}
+	
+	&-Val {
+		font-size 14px 
+		color #3f9ae3
+		
+		@media (min-width $sm) {
+			font-size 16px 
+		}
+	}
+}

@@ -1,0 +1,116 @@
+footer.Foo: .container: .row.flex-xxl-nowrap
+	.Foo-Col.col-12.col-lg-5
+		img.Foo-Logo(src="images/logo.png" width="133" height="40" alt="Эконаy свежие технологии")
+		h3.Foo-Title.d-lg-none эконау
+		ul.Foo-Nav.NavFoo
+			li.NavFoo-Item.Foo-Address
+				| Екатеринбург, ул. Сулимова, 46, Кировский район, микрорайон Пионерский
+			li.NavFoo-Item
+				.d-flex.align-items-center.no-gutters.Text-Blue
+					.Icon-Contact.fa.fa-map-marker
+					.Text-Contact Посмотреть на карте
+			li.NavFoo-Item
+				.d-flex.align-items-center.no-gutters
+					.Icon-Contact.fa.fa-phone
+					.Text-Contact +7 (343) 200-06-69
+			li.NavFoo-Item
+				.d-flex.align-items-center.no-gutters
+					.Icon-Contact.fa.fa-envelope.Text-Green
+					.Text-Contact.Text-Green2 otvet@ekonow.ru
+			li.NavFoo-Item
+				.d-flex.align-items-center.no-gutters
+					.Icon-Contact.fa.fa-clock-o
+					.Text-Contact.Text-Schedule.Text-Gray пн-пт с 10:00 до 18:00 (8:00-16:00 московское время)
+			li.NavFoo-Item
+				.d-flex.align-items-center.no-gutters.Text-Blue
+					.Icon-Contact.fa.fa-sitemap
+					.Text-Contact Карта сайта
+
+
+	.Foo-Col.col-12.col-lg-4
+		h3.Foo-Title Продукция
+		ul.Foo-Nav.NavFoo
+			li.NavFoo-Item
+				a.Link(href="#") Промышленные озонаторы воды
+			li.NavFoo-Item
+				a.Link(href="#") Промышленные озонаторы воздуха
+			li.NavFoo-Item
+				a.Link(href="#") Промышленные ультразвуковые увлажнители воздуха
+			li.NavFoo-Item
+				a.Link(href="#") Туманообразователи высокого давления
+	.Foo-Col.col-12.col-lg-4
+		h3.Foo-Title Сферы применения озонаторов
+		ul.Foo-Nav.NavFoo
+			li.NavFoo-Item
+				a.Link(href="#") Хранение овощей и фруктов
+			li.NavFoo-Item
+				a.Link(href="#") Сельское хозяйство и животноводство
+			li.NavFoo-Item
+				a.Link(href="#") Пищевая промышленность
+			li.NavFoo-Item
+				a.Link(href="#") HORECA
+			li.NavFoo-Item
+				a.Link(href="#") Очистка воды и стоков
+			li.NavFoo-Item
+				a.Link(href="#") Бассейны
+			li.NavFoo-Item
+				a.Link(href="#") Прачечные, клининг, удаление запахов
+	.Foo-Col.col-12.col-lg-4
+		h3.Foo-Title Сферы применения увлажнителей и туманообразователей
+		ul.Foo-Nav.NavFoo
+			li.NavFoo-Item
+				a.Link(href="#") Хранение овощей и фруктов
+			li.NavFoo-Item
+				a.Link(href="#") Сельское хозяйство и животноводство
+			li.NavFoo-Item
+				a.Link(href="#") Пищевая промышленность
+			li.NavFoo-Item
+				a.Link(href="#") Деревообработка
+			li.NavFoo-Item
+				a.Link(href="#") Производство электроники
+			li.NavFoo-Item
+				a.Link(href="#") Производство вспененных пластиков и бетона
+			li.NavFoo-Item
+				a.Link(href="#") Типографии, покрасочные камеры
+			li.NavFoo-Item
+				a.Link(href="#") Архивы
+	.Foo-Col.col-12.col-lg-4
+		h3.Foo-Title О компании
+		ul.Foo-Nav.NavFoo
+			li.NavFoo-Item
+				a.Link(href="#") Информация о компании
+			li.NavFoo-Item
+				a.Link(href="#") Наши клиенты
+			li.NavFoo-Item
+				a.Link(href="#") Региональные дилеры
+.Bottom: .container: .row.align-items-center.justify-content-between
+	.col-12.col-sm-auto
+		.Bottom-Text © 2018 ООО «Свежие технологии»
+	.col-12.col-sm-auto
+		img.Bottom-Dev(src="images/dev-logo.png" width="150" height="46" alt="LTD Tutmee Web development Agency")
+
+a.Up(href="#page"): img.Up-Icon(src="images/up.png")
+.d-none
+	.Popup#Popupthks
+		.Popup-Title.Title-3 Ваша заявка отправлена
+		p.Popup-Slogan.mt-10.mt-sm-20 Спасибо, что выбрали нас!
+
+	form.Popup.Popup_Order#PopupOrder
+		.Popup-Title.Title-3 Заказать звонок
+		.row.gutters-10
+			.col-sm
+				label.Label.Popup-Field
+					.Label-Title Ваше имя
+					input.Label-Field.Field.Field_O_Gray(type="text")
+			.col-sm
+				label.Label.Popup-Field
+					.Label-Title Телефон
+					input.Label-Field.Field.Field_O_Gray(type="tel")
+		.row.align-items-baseline.gutters-10
+			.col-auto
+				input.Checkbox-Gray(type="checkbox")
+			.col.FormPolitic
+				| Заполняя и отправляя форму, я даю своё согласие на обработку моих персональных данных в соответствии с ФЗ «О персональных данных» (№152-ФЗ от 27.07.2006), на условиях и для целей, определенных 
+				a.FormPolitic-Link(href="#") Политикой конфиденциальности
+					| .
+		button.Popup-Button.Button.Button_Theme_Green.Button_Size_Md Отправить

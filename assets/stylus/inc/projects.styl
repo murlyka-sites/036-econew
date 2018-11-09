@@ -1,0 +1,209 @@
+.SProjects {
+	padding 30px 0
+	
+	@media (min-width $breakpoint-md) {
+		padding 50px 0 25px
+	}
+	
+	@media (min-width $breakpoint-xxl) {
+		padding 100px 0 50px
+	}
+	
+	&-Title {
+		margin-bottom 25px 
+		
+		@media (min-width $breakpoint-xxl) {
+			margin-bottom 70px 
+		}
+	}
+	
+	&-Header {
+		margin-bottom 30px 
+		
+		@media (min-width $breakpoint-xxl) {
+			margin-bottom 30px 
+		}
+	}
+	
+	&-All {
+		display block
+		width 100%
+		padding-left 10px
+		padding-right 10px 
+		text-transform uppercase
+	}
+	
+	&-Current {
+		width 100%
+		padding-left 10px
+		padding-right 10px
+		text-transform uppercase
+		
+		@media (min-width $breakpoint-sm) {
+			max-width 320px
+		}
+		
+		&::after {
+			content '\f078'
+			margin-left 5px 
+			fa()
+		}
+		
+		&.open::after {
+			content '\f077'
+		}
+	}
+	
+	&-HeaderCol {
+		margin-bottom 25px 
+	}
+	
+	&-Tabs {
+		
+		@media (min-width $breakpoint-sm) and (max-width ($breakpoint-xl - 1)) {
+			width 320px
+			flex 0 0 320px 
+		}
+	}
+	
+	&-Tab {
+		width 100%
+		display block
+		text-align left
+		padding-left 10px 
+		padding-right 10px 
+		text-transform uppercase
+		
+		&.active {
+			display none
+			
+
+		}
+		
+		@media (min-width $breakpoint-xl) {
+			display block
+			width auto
+		}
+	}
+	
+	&-Prev,
+	&-Next {
+		&.swiper-button-disabled {
+			opacity: 0.5
+		}
+	}
+	
+	&-Pagination {
+		text-align center
+		margin-bottom 20px 
+	}
+}
+
+.CProject {
+	
+	&-Header {
+		display block		
+		position relative
+		color white
+		
+		&:hover {
+			color white
+		}
+		
+		&::before {
+			content ''
+			display block
+			position absolute
+			bottom 0
+			left 0
+			width 100%
+			z-index 1 
+			background: url(../images/projects/bg.png) center center / cover, linear-gradient(to top, #0c0405 0%, rgba(0, 0, 0, 0) 50%)
+			background-pepeat no-repeat
+			height 100%
+		}
+	}
+	
+	&-Pr {
+		width 100%
+	}
+	
+	&-Title {
+		position absolute
+		bottom 20px 
+		left 20px 
+		right 90px 
+		z-index 2 
+		color: #e5e5e5;
+		font-weight 600
+		font-size 15px 
+		
+		@media (min-width $breakpoint-md) {
+			font-size 16px 
+		}
+		
+		@media (min-width $breakpoint-lg) {
+			font-size 18px 
+		}
+		
+		@media (min-width $breakpoint-xl) {
+			left 30px
+		}
+		
+		@media(min-width: $breakpoint-xxl) {
+			left 60px 
+			right 120px 
+			
+		}
+
+		&::after {
+			fa()
+			content ''
+			font-size 12px 
+			margin-left 10px 
+		}
+	}
+	
+	&-Date {
+		position absolute
+		bottom 0
+		right 0
+		background #38328e
+		text-align center
+		font-size 15px 
+		line-height 1.2
+		padding 5px
+		width 60px 
+		height 60px
+		z-index 2 
+		cursor default
+		
+		@media (min-width: $breakpoint-lg) {
+			width 72px
+			height 72px
+			font-size 18px 
+			
+		}
+	}
+	
+	&-Year {
+		display block
+		width 100%
+		font-size 12px 
+	}
+	
+	&-Desc {
+		padding 20px
+		font-size 14px 
+		line-height 1.5 
+		color: #666666
+		
+		@media (min-width: $breakpoint-xl) {
+			padding 30px 
+		}
+		
+		@media (min-width: $breakpoint-xxl) {
+			padding 30px 60px
+		}
+	}
+}

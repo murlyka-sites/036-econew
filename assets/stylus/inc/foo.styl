@@ -13,25 +13,38 @@
 		
 		@media (min-width $breakpoint-xl) {
 			width 185px
-			margin-bottom 9px 
 		}
 	}
 	
 	&-Address {
 		color #666
 		font-size 13px 
+		line-height 1.4 
+		letter-spacing 0.01em 
+		max-width 185px 
+		margin-bottom 7px 
 	}
 	
-	&-Col {		
+	&-Col {
 		@media (min-width: $breakpoint-lg) {
 			margin-bottom 15px 
 		}
 		
-		@media (min-width $breakpoint-xxl) {
-			flex: 0 0 auto;
-			width: auto;
-			max-width: none
+		@media (min-width $breakpoint-xl) {
+			flex: 0 20% auto;
+			width: 21%;
+			max-width: 21%
+			
+			&:first-child {
+				width 20%
+				max-width: 20% 
+			}
+			
+			&:last-child {
+				max-width 17%
+			}
 		}
+		
 	}
 	
 	&-Title {
@@ -47,6 +60,7 @@
 		
 		@media (min-width $breakpoint-md) {
 			font-size 13px 
+			margin 10px 0 20px
 		}
 		
 		&::after {
@@ -67,12 +81,19 @@
 		@media (min-width $breakpoint-lg) {
 			display block
 			height 3em
-			font-size 16px
 			max-width: 300px
 			
 			&::after {
 				display none
 			}
+		}
+		
+		@media (min-width $breakpoint-xl) {
+			font-size 14px 
+		}
+		
+		@media (min-width 1360px) {
+			font-size 16px 
 		}
 	}
 }

@@ -426,3 +426,5 @@ $('.Header-Toggle').click(function() {
 
 	$(this).next().removeClass('d-none')
 });
+
+$('[data-toggle=tooltip]').tooltip()

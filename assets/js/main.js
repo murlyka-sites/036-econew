@@ -428,3 +428,11 @@ $('.Header-Toggle').click(function() {
 });
 
 $('[data-toggle=tooltip]').tooltip()
+
+$('.CalcRecAvailable-Title').hover(function() {
+	$('.CalcRecAvailable-Title').removeClass('active');
+	$(this).addClass('active')
+
+	let src = $(this).data('src');
+	$('.CalcRecAvailable-Pr').attr('src', src);
+})

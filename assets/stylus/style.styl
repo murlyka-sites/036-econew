@@ -42,6 +42,7 @@ fa() {
 @import 'inc/topic-collapse'
 @import 'inc/topic-scheme'
 @import 'inc/zoom-picture'
+
 *, *::after, *::before {
 	box-sizing: border-box
 }
@@ -57,6 +58,10 @@ html {
 	&_Lock {
 		overflow hidden
 	}
+}
+
+.Topic {
+	padding-top 20px 
 }
 
 .AlertNumber {
@@ -673,14 +678,14 @@ html {
 		font-size 12px 
 		margin-bottom 4px 
 		
-		@media (min-width $lg) {
+		@media (min-width $breakpoint-xl) {
 			font-size 14px 
 		}
 	}
 	
 	&-Field {
 		
-	}
+	} 
 }
  
 .TopicSliderThumb {
@@ -965,7 +970,7 @@ html {
 	
 	&_Bg_2 {
 		background #009147 
-		background-image url(../images/bg-to-order-2.png)
+		background-image url(../images/bg-to-order-2.png) no-repeat
 	}
 	
 	&-Title {
@@ -987,6 +992,13 @@ html {
 		
 		@media (min-width $mdl) {
 			width 300px
+		}
+	}
+	
+	&-BigButton {
+		@media (min-width $breakpoint-lg) {
+			width 100%
+			max-width 350px
 		}
 	}
 	
@@ -1391,6 +1403,10 @@ html {
     display: -ms-inline-flexbox !important;
     display: inline-flex !important;
   }
+  
+  .justify-content-xxl-center {
+  	justify-content center !important
+  }
 }
 
 .gutters-5 {
@@ -1426,10 +1442,20 @@ html {
 @import 'inc/works'
 @import 'inc/clients'
 
+.SMain-Wrapper {
+	&-Container {
+		margin auto
+	}
+}
+
 .SMainProduct {
 	background #f7f7f7 url(../images/mainproduct/bg.png) left bottom / 672px auto no-repeat
 	text-align center
 	padding 30px 0 0
+	
+	&-Container {
+		margin auto 
+	}
 	
 	@media (min-width $breakpoint-lg) {
 		text-align left
@@ -1445,7 +1471,34 @@ html {
 	}
 	
 	&-Title {
-		margin-bottom 15px
+		margin 0 0 15px
+		font-size 24px 
+		font-weight 300
+		line-height 1
+		 
+		@media (min-width $breakpoint-md) {
+			font-size 42px 
+		}
+		
+		@media (min-width $breakpoint-lg) {
+			font-size 48px 
+			margin 0 0 25px
+		}
+		
+		@media (min-width $breakpoint-xl) {
+			font-size 52px 
+		}
+		
+		@media (min-width $breakpoint-xxl) {
+			font-size 60px 
+		}
+	}
+	
+	&-Buttons {
+		
+		@media (min-width 1360px) {
+			max-width 530px 
+		}
 	}
 	
 	&-Button {
@@ -1465,11 +1518,17 @@ html {
 		padding 15px 
 		margin-bottom 15px
 		background-color: #e5e5e5;
+		font-size 15px 
 		
 		@media (min-width $breakpoint-md) {
 			background none
 			padding 0
 			margin-bottom 35px  
+			
+		}
+		
+		@media (min-width $breakpoint-lg) {
+			font-size 18px 
 		}
 	}
 	
@@ -1486,7 +1545,7 @@ html {
 	margin 0
 	padding 0
 	text-align left
-	
+	 
 	&-Link {		
 		position relative
 		padding-left 15px
@@ -1515,8 +1574,9 @@ html {
 }
 
 .CMainProductNav {
-	color #3f9ae3
+	stroke #3f9ae3
 	padding 15px 20px
+	color #333
 	
 	@media (min-width $breakpoint-md) {
 		text-align left
@@ -1542,6 +1602,7 @@ html {
 	&.active {
 		background #3f9ae3
 		color white 
+		stroke white
 	}
 	
 	&:focus {
@@ -1550,11 +1611,16 @@ html {
 	
 	&-Pr {
 		fill none
-		stroke currentColor
+		// stroke currentColor
 		stroke-linejoin round
 		stroke-linecap round
 		width 35px 
 		height 48px		
+		
+		@media (min-width $breakpoint-xl) {
+			width 60px 
+			height 90px
+		}
 	}
 	
 	&-Title {
@@ -1562,5 +1628,9 @@ html {
 		font-weight 600  
 		text-align left
 		text-transform uppercase
+		
+		@media (min-width $breakpoint-xl) {
+			font-size 14px 
+		}
 	}
 }

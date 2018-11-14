@@ -13,6 +13,20 @@
 .Text-Gray {
   color: #808080;
 }
+.Title {
+  font-weight: 300;
+  font-size: 21px;
+}
+@media (min-width: 768px) {
+  .Title {
+    font-size: 36px;
+  }
+}
+@media (min-width: 1200px) {
+  .Title {
+    font-size: 48px;
+  }
+}
 .Title-1 {
   margin: 0;
   font-size: 24px;
@@ -58,11 +72,6 @@
 @media (min-width: 1580px) {
   .Title-2 {
     font-size: 36px;
-  }
-}
-@media (min-width: 1600px) {
-  .Title-2 {
-    font-size: 48px;
   }
 }
 .Title-3 {
@@ -465,6 +474,9 @@ html {
 }
 .Page_Lock {
   overflow: hidden;
+}
+.Topic {
+  padding-top: 20px;
 }
 .AlertNumber {
   position: relative;
@@ -988,7 +1000,7 @@ html {
   font-size: 12px;
   margin-bottom: 4px;
 }
-@media (min-width: 1580px) {
+@media (min-width: 1200px) {
   .Label-Title {
     font-size: 14px;
   }
@@ -1270,7 +1282,7 @@ html {
 }
 .ToOrder_Bg_2 {
   background: #009147;
-  background-image: url("../images/bg-to-order-2.png");
+  background-image: url("../images/bg-to-order-2.png") no-repeat;
 }
 .ToOrder-Title {
   margin-bottom: 10px;
@@ -1291,6 +1303,12 @@ html {
 @media (min-width: 1340px) {
   .ToOrder-Button {
     width: 300px;
+  }
+}
+@media (min-width: 992px) {
+  .ToOrder-BigButton {
+    width: 100%;
+    max-width: 350px;
   }
 }
 .FormPolitic {
@@ -1794,6 +1812,10 @@ html {
     display: -ms-inline-flexbox !important;
     display: inline-flex !important;
   }
+  .justify-content-xxl-center {
+    -ms-flex-pack: center !important;
+        justify-content: center !important;
+  }
 }
 .gutters-5 {
   margin-left: -5px;
@@ -1906,6 +1928,7 @@ html {
   line-height: 1;
   font-weight: 600;
   text-align: center;
+  cursor: pointer;
 }
 .Button:hover {
   text-decoration: none;
@@ -1915,6 +1938,9 @@ html {
 }
 .Button_Size_Md {
   padding: 18px 25px;
+}
+.Button_Size_Lg {
+  padding: 21px 25px;
 }
 .Button_Theme_GrayBlue {
   background: #f7f7f7;
@@ -1953,6 +1979,20 @@ html {
 }
 .Button_Theme_Green:active {
   background-position: 100% 100%;
+  color: #fff;
+}
+.Button_Theme_Green2 {
+  color: #fff;
+  background: #69bc45 linear-gradient(-10deg, #69bc45, #69bc45 33%, #87ca6a 33.5%, #87ca6a 67%, #549737 67.5%) 0% 0%/1000% 1000% no-repeat;
+  transition: 0.5s;
+  background-position: 100% 100%;
+}
+.Button_Theme_Green2:hover {
+  background-position: 50% 50%;
+  color: #fff;
+}
+.Button_Theme_Green2:active {
+  background-position: 0% 0%;
   color: #fff;
 }
 .Alert {
@@ -2297,7 +2337,7 @@ html {
     display: none;
   }
   .NavMobile-Level:nth-child(2) {
-    width: 320px;
+    width: 33.33%;
   }
   .NavMobile-Level:nth-child(3) {
     width: 100%;
@@ -2319,6 +2359,7 @@ html {
   background: transparent;
   -ms-flex: none;
       flex: none;
+  cursor: pointer;
 }
 @media (min-width: 992px) {
   .NavMobile-Back {
@@ -2340,6 +2381,8 @@ html {
 .Nav {
   position: relative;
   padding: 10px 0;
+  box-shadow: 2px 3px 7px rgba(12,4,5,0.08);
+  z-index: 2;
 }
 @media (min-width: 992px) {
   .Nav {
@@ -2450,7 +2493,7 @@ html {
   }
 }
 .NavTop-Link:hover,
-.NavTop-Link_Active {
+.NavTop-Link.active {
   box-shadow: 0 0 0 1px #fff;
   background: #1c75bc;
   color: #fff;
@@ -2458,7 +2501,7 @@ html {
 }
 @media (min-width: 992px) {
   .NavTop-Link:hover,
-  .NavTop-Link_Active {
+  .NavTop-Link.active {
     background: #3f9ae3;
     box-shadow: none;
   }
@@ -2474,6 +2517,10 @@ html {
 .NavTopSub-Title {
   margin-bottom: 10px;
   text-transform: uppercase;
+  color: inherit;
+}
+.NavTopSub-Title:hover {
+  color: inherit;
 }
 .NavTopSub-List {
   margin: 0 -15px 25px;
@@ -2526,9 +2573,24 @@ html {
   font-weight: 400;
   font-size: 13px;
 }
+@media (min-width: 1600px) {
+  .NavTopSubContent {
+    padding-top: 60px;
+  }
+}
+@media (min-width: 992px) {
+  .NavTopSubContent-Col {
+    padding-left: 45px;
+  }
+}
+@media (min-width: 1600px) {
+  .NavTopSubContent-Col {
+    padding-left: 110px;
+  }
+}
 .NavTopSubContent-Title {
   margin-bottom: 25px;
-  font-size: 18px;
+  font-size: 24px;
   font-weight: 600;
 }
 .NavTopSubContent-List {
@@ -2567,6 +2629,10 @@ html {
     padding: 0 50px;
   }
 }
+.Header-Contact {
+  padding-bottom: 10px;
+  line-height: 1;
+}
 @media (min-width: 1360px) {
   .Header-Contact {
     margin-right: 30px;
@@ -2574,6 +2640,7 @@ html {
 }
 .Header-Label {
   font-size: 12px;
+  line-height: 10px;
 }
 @media (max-width: 991px) {
   .Header-Button {
@@ -2635,11 +2702,16 @@ html {
 .Main-Title {
   margin-bottom: 50px;
 }
+@media (min-width: 992px) {
+  .Main-Title {
+    max-width: 800px;
+  }
+}
 .Main-Button {
   text-transform: uppercase;
 }
 .Calc {
-  background: #3f9ae3;
+  background: #3f9ae3 url("../images/bg-calc.png") -50% 40% no-repeat;
   color: #fff;
 }
 @media (min-width: 992px) {
@@ -2656,7 +2728,7 @@ html {
     padding: 25px 5px;
   }
 }
-@media (min-width: $breakpoint-xlg) {
+@media (min-width: 1200px) {
   .Calc-Body {
     padding: 40px 20px;
   }
@@ -2675,7 +2747,7 @@ html {
 }
 .Calc-Rec {
   width: 100%;
-  background: #1c75bc;
+  background: rgba(11,45,74,0.5);
 }
 .CalcRec {
   padding: 25px 0;
@@ -2734,15 +2806,31 @@ html {
     font-size: 16px;
   }
 }
-.CalcRecAvailable-Desc {
+.CalcRecAvailable-Title {
+  display: inline-block;
+  margin-left: 20px;
   font-size: 15px;
   font-weight: 600;
   color: #6acbf9;
 }
 @media (min-width: 1200px) {
-  .CalcRecAvailable-Desc {
+  .CalcRecAvailable-Title {
     font-size: 16px;
   }
+}
+.CalcRecAvailable-Title.active {
+  color: inherit;
+}
+.CalcRecAvailable-Title.active::before {
+  position: absolute;
+  left: -20px;
+  top: 3px;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: '\f060';
 }
 .SEdge {
   padding: 50px 0 25px;
@@ -3142,13 +3230,13 @@ html {
 }
 @media (min-width: 1200px) {
   .CWork {
-    padding: 150px 40px 50px;
+    padding: 150px 20px 50px;
     height: 100%;
   }
 }
 @media (min-width: 1600px) {
   .CWork {
-    padding: 150px 100px 50px;
+    padding: 150px 20px 80px;
   }
 }
 .CWork::after,
@@ -3236,6 +3324,8 @@ html {
 @media (min-width: 1200px) {
   .CWork-Pr {
     margin: 0 0 20px;
+    width: 130px;
+    height: 130px;
   }
 }
 .CWork-Icon {
@@ -3250,6 +3340,16 @@ html {
 @media (min-width: 768px) {
   .CWork-Desc {
     font-size: 14px;
+  }
+}
+@media (min-height: 1200px) {
+  .CWork-Desc {
+    max-width: 250px;
+  }
+}
+@media (min-width: 1200px) {
+  .CWork-Cell {
+    max-width: 280px;
   }
 }
 .SClient {
@@ -3325,10 +3425,16 @@ html {
     font-size: 14px;
   }
 }
+.SMain-Wrapper-Container {
+  margin: auto;
+}
 .SMainProduct {
   background: #f7f7f7 url("../images/mainproduct/bg.png") left bottom/672px auto no-repeat;
   text-align: center;
   padding: 30px 0 0;
+}
+.SMainProduct-Container {
+  margin: auto;
 }
 @media (min-width: 992px) {
   .SMainProduct {
@@ -3345,7 +3451,36 @@ html {
   }
 }
 .SMainProduct-Title {
-  margin-bottom: 15px;
+  margin: 0 0 15px;
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 1;
+}
+@media (min-width: 768px) {
+  .SMainProduct-Title {
+    font-size: 42px;
+  }
+}
+@media (min-width: 992px) {
+  .SMainProduct-Title {
+    font-size: 48px;
+    margin: 0 0 25px;
+  }
+}
+@media (min-width: 1200px) {
+  .SMainProduct-Title {
+    font-size: 52px;
+  }
+}
+@media (min-width: 1600px) {
+  .SMainProduct-Title {
+    font-size: 60px;
+  }
+}
+@media (min-width: 1360px) {
+  .SMainProduct-Buttons {
+    max-width: 530px;
+  }
 }
 .SMainProduct-Button {
   display: block;
@@ -3364,12 +3499,18 @@ html {
   padding: 15px;
   margin-bottom: 15px;
   background-color: #e5e5e5;
+  font-size: 15px;
 }
 @media (min-width: 768px) {
   .SMainProduct-Cat {
     background: none;
     padding: 0;
     margin-bottom: 35px;
+  }
+}
+@media (min-width: 992px) {
+  .SMainProduct-Cat {
+    font-size: 18px;
   }
 }
 .SMainProduct-Nav {
@@ -3400,8 +3541,9 @@ html {
   top: 50%;
 }
 .CMainProductNav {
-  color: #3f9ae3;
+  stroke: #3f9ae3;
   padding: 15px 20px;
+  color: #333;
 }
 @media (min-width: 768px) {
   .CMainProductNav {
@@ -3421,21 +3563,32 @@ html {
 .CMainProductNav.active {
   background: #3f9ae3;
   color: #fff;
+  stroke: #fff;
 }
 .CMainProductNav:focus {
   outline: none;
 }
 .CMainProductNav-Pr {
   fill: none;
-  stroke: currentColor;
   stroke-linejoin: round;
   stroke-linecap: round;
   width: 35px;
   height: 48px;
+}
+@media (min-width: 1200px) {
+  .CMainProductNav-Pr {
+    width: 60px;
+    height: 90px;
+  }
 }
 .CMainProductNav-Title {
   font-size: 12px;
   font-weight: 600;
   text-align: left;
   text-transform: uppercase;
+}
+@media (min-width: 1200px) {
+  .CMainProductNav-Title {
+    font-size: 14px;
+  }
 }

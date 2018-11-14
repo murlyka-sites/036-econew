@@ -47,7 +47,7 @@
 			}
 			
 			&:nth-child(2) {
-				width 320px
+				width 33.33%
 			}
 			
 			&:nth-child(3) {
@@ -67,6 +67,7 @@
 		height: 30px
 		background transparent
 		flex none
+		cursor pointer
 	}
 	
 	&-Back {		
@@ -90,6 +91,8 @@
 .Nav {
 	position relative
 	padding 10px 0
+	box-shadow 2px 3px 7px rgba(12, 4, 5, 0.08)
+	z-index 2 
 	
 	@media (min-width: $breakpoint-lg) {
 		justify-content flex-start
@@ -191,7 +194,7 @@
 		
 		
 		&:hover,
-		&_Active {
+		&.active {
 			box-shadow 0 0 0 1px #fff
 			background #1c75bc 
 			color white
@@ -217,6 +220,11 @@
 	&-Title {
 		margin-bottom 10px
 		text-transform uppercase
+		color inherit
+		
+		&:hover {
+			color inherit
+		}
 	}
 	
 	&-List {
@@ -270,9 +278,24 @@
 	font-weight 400
 	font-size 13px 
 	
+	
+	@media (min-width $breakpoint-xxl) {
+		padding-top 60px 
+	}
+	
+	&-Col {
+		@media (min-width $breakpoint-lg) {
+			padding-left 45px
+		}
+		
+		@media (min-width $breakpoint-xxl) {
+			padding-left 110px 
+		}
+	}
+	
 	&-Title {
 		margin-bottom 25px 
-		font-size 18px 
+		font-size 24px 
 		font-weight 600 
 	}
 	

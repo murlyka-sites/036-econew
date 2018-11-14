@@ -21,6 +21,10 @@
 	background url('../images/work/bg.png') center / cover
 	text-align center
 	
+	&:nth-child(2) {
+		// background url('../images/work/work-bg-2.png') center / cover
+	}
+	
 	@media (min-width $breakpoint-sm) {
 		text-align left
 	}
@@ -30,12 +34,12 @@
 	}
 	
 	@media (min-width $breakpoint-xl) {
-		padding 150px 40px 50px
+		padding 150px 20px 50px
 		height 100%
 	}
 	
 	@media (min-width $breakpoint-xxl) {
-		padding 150px 100px 50px 
+		padding 150px 20px 80px 
 	}
 	
 	&::after,
@@ -131,6 +135,8 @@
 		
 		@media (min-width $breakpoint-xl) {
 			margin 0 0 20px 
+			width 130px 
+			height 130px
 		}
 	}
 	
@@ -144,8 +150,20 @@
 		line-height 1.5
 		color white
 		
+		
 		@media (min-width $breakpoint-md) {
 			font-size 14px 
+		}
+		
+		@media (min-height $breakpoint-xl) {
+			max-width 250px 
+		}
+	}
+	
+	&-Cell {
+		
+		@media (min-width $breakpoint-xl) {
+			max-width 280px 
 		}
 	}
 }

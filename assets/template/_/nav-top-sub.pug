@@ -1,6 +1,6 @@
 - random = Math.floor(Math.random() * (15 - 1300) + 1300);
 .NavTop-Sub: .NavTopSub
-	.NavTopSub-Title Оборудование озонаторное #{random}
+	a.NavTopSub-Title(href="#") Оборудование озонаторное #{random}
 	ul.NavTopSub-List
 		li.NavTopSub-Item
 			a.NavTopSub-Link(href="#") Промышленные озонаторы воздуха
@@ -12,7 +12,7 @@
 			a.NavTopSub-Link(href="#") Универсальные озонаторы
 			include nav-top-sub-content
 
-	.NavTopSub-Title Системы увлажнения воздуха
+	a.NavTopSub-Title(href="#") Системы увлажнения воздуха
 	ul.NavTopSub-List
 		li.NavTopSub-Item
 			a.NavTopSub-Link(href="#") Промышленные ультразвуковые увлажнители
@@ -21,5 +21,5 @@
 			a.NavTopSub-Link(href="#") Туманообразователи высокого давления
 			include nav-top-sub-content
 				
-	.NavTopSub-Title Контрольно-измерительные приборы 
-	.NavTopSub-Title Запчасти и комплектующие
+	a.NavTopSub-Title(href="#") Контрольно-измерительные приборы 
+	a.NavTopSub-Title(href="#") Запчасти и комплектующие

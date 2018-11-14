@@ -35,6 +35,10 @@
 	
 	&-Title {
 		margin-bottom 50px
+		
+		@media (min-width $breakpoint-lg) {
+			max-width 800px 
+		}
 	}
 	
 	&-Button {
@@ -43,7 +47,7 @@
 }
 
 .Calc {
-	background #3f9ae3
+	background #3f9ae3 url(../images/bg-calc.png) -50% 40%  no-repeat
 	color white	
 	
 	@media (min-width $breakpoint-lg) {
@@ -58,7 +62,7 @@
 			padding 25px 5px
 		}
 		
-		@media (min-width $breakpoint-xlg) {
+		@media (min-width $breakpoint-xl) {
 			padding 40px 20px
 		}
 	}
@@ -77,7 +81,7 @@
 	
 	&-Rec {
 		width 100%
-		background #1c75bc
+		background rgba(11, 45, 74, .5)
 	}
 }
 
@@ -140,13 +144,28 @@
 		}
 	}
 	
-	&-Desc {
+	&-Title {
+		display inline-block
+		margin-left 20px 
 		font-size 15px 
 		font-weight 600 
 		color: #6acbf9;
 		
 		@media (min-width $breakpoint-xl) {
 			font-size 16px
+		}
+		
+		&.active {
+			color inherit
+			
+			&::before {
+				position absolute
+				left -20px
+				top 3px 
+				// transform translate(0, -5%)
+				fa()
+				content '\f060'
+			}
 		}
 	}
 }

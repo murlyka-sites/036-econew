@@ -2956,6 +2956,7 @@ html {
   font-size: 13px;
   line-height: 1.5;
   color: #666;
+  max-width: 260px;
 }
 @media (min-width: 576px) {
   .CEdge-Desc {

@@ -1281,8 +1281,7 @@ html {
   padding-bottom: 55px;
 }
 .ToOrder_Bg_2 {
-  background: #009147;
-  background-image: url("../images/bg-to-order-2.png") no-repeat;
+  background: #009147 url("../images/bg-to-order-2.png") no-repeat;
 }
 .ToOrder-Title {
   margin-bottom: 10px;

@@ -1461,11 +1461,11 @@ html {
 	}
 
 	&-Pr {
-		width 100px
+		width auto
 		height auto
 		
 		@media (min-width $breakpoint-md) {
-			width 205px 
+			width 430px 
 		}
 	}
 	
@@ -1545,11 +1545,11 @@ html {
 	padding 0
 	text-align left
 	font-weight 600 
-	 
+	
 	&-Link {		
 		position relative
 		padding-left 15px
-		
+		hyphens auto
 		&:hover {
 			text-decoration none
 		}
@@ -1563,7 +1563,7 @@ html {
 			transform translate(0, -50%) rotate(45deg)
 			position absolute
 			left 0px
-			top 50%
+			top 0.8em
 			
 		}
 		

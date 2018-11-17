@@ -2955,12 +2955,12 @@ html {
   font-size: 13px;
   line-height: 1.5;
   color: #666;
-  max-width: 260px;
 }
 @media (min-width: 576px) {
   .CEdge-Desc {
     display: block;
     font-size: 11px;
+    max-width: 260px;
   }
 }
 @media (min-width: 992px) {
@@ -3448,12 +3448,12 @@ html {
   }
 }
 .SMainProduct-Pr {
-  width: 100px;
+  width: auto;
   height: auto;
 }
 @media (min-width: 768px) {
   .SMainProduct-Pr {
-    width: 205px;
+    width: 430px;
   }
 }
 .SMainProduct-Title {
@@ -3532,6 +3532,9 @@ html {
 .ListCat-Link {
   position: relative;
   padding-left: 15px;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
 }
 .ListCat-Link:hover {
   text-decoration: none;
@@ -3545,7 +3548,7 @@ html {
   transform: translate(0, -50%) rotate(45deg);
   position: absolute;
   left: 0px;
-  top: 50%;
+  top: 0.8em;
 }
 .CMainProductNav {
   stroke: #3f9ae3;

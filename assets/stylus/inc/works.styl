@@ -18,8 +18,13 @@
 	position relative
 	min-height 200px
 	padding 30px 25px 25px
-	background url('../images/work/bg.png') center / cover
+	background-image url('../images/work/bg.png')
+	background-positioin center bottom
+	background-size auto 200%
+	backgroudn-repeat repeat-x
 	text-align center
+	
+
 	
 	&:nth-child(2) {
 		// background url('../images/work/work-bg-2.png') center / cover
@@ -34,6 +39,9 @@
 	}
 	
 	@media (min-width $breakpoint-xl) {
+		background-position center -25%
+		background-size 100% auto
+		background-repeat no-repeat
 		padding 150px 20px 50px
 		height 100%
 	}

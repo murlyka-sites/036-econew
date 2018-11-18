@@ -2144,19 +2144,12 @@ html {
   margin-bottom: 10px;
 }
 .NavSticky-List {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
   list-style-type: none;
+  z-index: 2;
   padding: 0;
   margin: 0;
   background: #f1f1f1;
   padding: 0 15px;
-}
-.NavSticky-List_Open {
-  display: block;
 }
 @media (min-width: 768px) {
   .NavSticky-List {
@@ -2179,14 +2172,6 @@ html {
 }
 .NavSticky-Item:last-child::after {
   display: none;
-}
-.NavSticky-Item:first-child {
-  display: none;
-}
-@media (min-width: 768px) {
-  .NavSticky-Item:first-child {
-    display: block;
-  }
 }
 .NavSticky-Link {
   position: relative;
@@ -2212,18 +2197,20 @@ html {
   background: #3f9ae3;
   text-decoration: none;
 }
-.NavSticky-Link:hover::after,
-.NavSticky-Link.active::after {
-  content: '';
-  display: block;
-  width: 0;
-  height: 0;
-  border: 7px solid transparent;
-  border-left-color: #3f9ae3;
-  position: absolute;
-  left: 100%;
-  top: 50%;
-  transform: translate(0, -50%);
+@media (min-width: 768px) {
+  .NavSticky-Link:hover::after,
+  .NavSticky-Link.active::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border: 7px solid transparent;
+    border-left-color: #3f9ae3;
+    position: absolute;
+    left: 100%;
+    top: 50%;
+    transform: translate(0, -50%);
+  }
 }
 .NavSticky-Current {
   color: #fff;
@@ -2537,6 +2524,7 @@ html {
   font-weight: 600;
 }
 .NavTopSub-Title {
+  display: block;
   margin-bottom: 10px;
   text-transform: uppercase;
   color: inherit;
@@ -2636,6 +2624,9 @@ html {
 .NavTopSubContent-Info {
   margin: 50px 0 30px;
   color: #818181;
+}
+.NavTopSubContent-Right {
+  max-width: 375px;
 }
 .Header {
   position: relative;

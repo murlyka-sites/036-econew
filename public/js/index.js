@@ -154,6 +154,7 @@ $('.FieldSpinner').each(function() {
 	function openLevel1() {
 		$navMobile.slideToggle();
 		$page.toggleClass('Page_Lock');
+		$burger.toggleClass('active');
 
 		if($cur1) {
 			$cur1.remove();
@@ -226,12 +227,14 @@ $('.FieldSpinner').each(function() {
 		isOpen = true;
 		$navMobile.slideDown();
 		$page.addClass('Page_Lock');
+		console.log($burger)
 	}
 
 	function closeMenu() {
 		isOpen = false
 		$navMobile.slideUp();
 		$page.removeClass('Page_Lock');
+		$burger.removeClass('active');
 	}
 
 	function init() {

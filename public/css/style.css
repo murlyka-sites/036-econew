@@ -2423,6 +2423,11 @@ html {
   line-height: 0;
   background: transparent;
   fill: #3f9ae3;
+  padding: 5px;
+}
+.Nav-Burger.active {
+  fill: #fff;
+  background: #3f9ae3;
 }
 .NavTop {
   position: relative;

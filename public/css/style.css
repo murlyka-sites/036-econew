@@ -2294,9 +2294,11 @@ html {
 .NavMobile {
   display: none;
   position: fixed;
+  top: 0;
   left: 0;
   right: 0;
-  bottom: 0;
+  padding-bottom: 80px;
+  bottom: -60px;
   background: #fff;
   z-index: 10;
   overflow: hidden;
@@ -2370,7 +2372,7 @@ html {
 }
 .NavMobile-Close {
   position: absolute;
-  bottom: 0;
+  bottom: 60px;
   left: 0;
   margin: auto auto 0;
   -ms-flex: none;
@@ -2384,7 +2386,8 @@ html {
   position: relative;
   padding: 10px 0;
   box-shadow: 2px 3px 7px rgba(12,4,5,0.08);
-  z-index: 2;
+  z-index: 11;
+  background: #fff;
 }
 @media (min-width: 992px) {
   .Nav {
@@ -2618,6 +2621,8 @@ html {
   color: #818181;
 }
 .Header {
+  position: relative;
+  z-index: 11;
   background: #f1f1f1;
   overflow: hidden;
 }

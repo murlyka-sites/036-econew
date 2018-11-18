@@ -175,7 +175,7 @@ $('.FieldSpinner').each(function() {
 	function init() {
 		let offset = $('.Nav').outerHeight() + $('.Header').outerHeight();
 
-		$navMobile.css('top', offset);
+		$navMobile.css('padding-top', offset);
 	}
 })();
 

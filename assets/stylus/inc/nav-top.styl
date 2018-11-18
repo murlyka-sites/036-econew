@@ -1,9 +1,11 @@
 .NavMobile {
 	display none
 	position fixed
+	top 0
 	left 0
 	right 0
-	bottom 0
+	padding-bottom 80px 
+	bottom -60px
 	background white
 	z-index 10
 	overflow hidden
@@ -78,7 +80,7 @@
 	
 	&-Close {
 		position absolute
-		bottom 0
+		bottom 60px
 		left 0
 		margin auto auto 0
 		flex none
@@ -92,7 +94,8 @@
 	position relative
 	padding 10px 0
 	box-shadow 2px 3px 7px rgba(12, 4, 5, 0.08)
-	z-index 2 
+	z-index 11
+	background white  
 	
 	@media (min-width: $breakpoint-lg) {
 		justify-content flex-start

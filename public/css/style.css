@@ -1171,7 +1171,7 @@ html {
   font-size: 14px;
   font-weight: 600;
 }
-@media (min-width: 768px) {
+@media (min-width: 1368px) {
   .Text-Phone {
     font-size: 16px;
   }
@@ -2654,8 +2654,7 @@ html {
   }
 }
 .Header-Contact {
-  padding-bottom: 10px;
-  line-height: 1;
+  padding-bottom: 12px;
 }
 @media (min-width: 1360px) {
   .Header-Contact {
@@ -2664,7 +2663,7 @@ html {
 }
 .Header-Label {
   font-size: 12px;
-  line-height: 10px;
+  line-height: 12px;
 }
 @media (max-width: 991px) {
   .Header-Button {

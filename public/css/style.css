@@ -478,6 +478,9 @@ html {
 .Topic {
   padding-top: 20px;
 }
+.Topic-Title {
+  color: #333;
+}
 .AlertNumber {
   position: relative;
   border: 1px solid #ddd;

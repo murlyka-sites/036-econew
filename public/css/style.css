@@ -966,9 +966,13 @@ html {
   color: #fff;
   width: 100%;
   text-decoration: none;
-  display: -webkit-box !important;
   -webkit-line-clamp: 3;
   overflow: hidden;
+}
+@media (min-width: 768px) {
+  .NavStickyToCatalog-Desc {
+    display: -webkit-box !important;
+  }
 }
 .NavStickyToCatalog-Divider {
   margin: 15px 0;
@@ -2600,8 +2604,13 @@ html {
 }
 .NavTopSubContent-Title {
   margin-bottom: 25px;
-  font-size: 24px;
+  font-size: 18px;
   font-weight: 600;
+}
+@media (min-width: 768px) {
+  .NavTopSubContent-Title {
+    font-size: 24px;
+  }
 }
 .NavTopSubContent-List {
   list-style-type: none;

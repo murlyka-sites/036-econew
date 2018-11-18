@@ -309,8 +309,12 @@
 	
 	&-Title {
 		margin-bottom 25px 
-		font-size 24px 
+		font-size 18px 
 		font-weight 600 
+		
+		@media (min-width $breakpoint-md) {
+			font-size 24px 
+		}
 	}
 	
 	&-List {

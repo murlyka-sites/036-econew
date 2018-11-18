@@ -636,10 +636,14 @@ html {
     text-decoration none
     // height 63px
     // max-height: 3em
-		display: -webkit-box !important;
+		// display: -webkit-box !important;
 		-webkit-box-orient: vertical;
 		-webkit-line-clamp: 3;
 		overflow: hidden;
+		
+		@media (min-width $breakpoint-md) {
+			display: -webkit-box !important;
+		}
 	}
 	
 	&-Divider {

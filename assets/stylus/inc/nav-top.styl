@@ -4,7 +4,7 @@
 	top 0
 	left 0
 	right 0
-	padding-bottom 80px 
+	padding-bottom 60px 
 	bottom -60px
 	background white
 	z-index 10
@@ -12,6 +12,7 @@
 	
 	&-Container {
 		height 100%
+		position relative
 		transform translate(0, 0)
 		transition 1s 
 		
@@ -72,7 +73,9 @@
 		cursor pointer
 	}
 	
-	&-Back {		
+	&-Back {
+		margin-left -9px
+		
 		@media (min-width: $breakpoint-lg) {
 			display none
 		}

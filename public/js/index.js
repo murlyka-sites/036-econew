@@ -78,6 +78,7 @@ $('.FieldSpinner').each(function() {
 	let $level1 = $('.NavMobile-Level:nth-child(1)')
 	let $level2 = $('.NavMobile-Level:nth-child(2)')
 	let $level3 = $('.NavMobile-Level:nth-child(3)')
+	let translate = 0;
 	let $cur1, $cur2, $cur3;
 	let isOpen = false;
 
@@ -92,6 +93,63 @@ $('.FieldSpinner').each(function() {
 	init();
 
 	$(window).resize(init);
+
+	// let hammerLevels = new Hammer($levels.get(0), {threshold: 1});
+	// let hammerClose = new Hammer($close.get(0));
+
+	let touchStart = 0;
+	let touchOffset = 0;
+
+	$levels.on('touchstart', function(e) {
+		touchStart =  e.changedTouches[0].pageX
+	})
+
+	$levels.on('touchmove', function(e) {
+		touchOffset = (e.changedTouches[0].pageX - touchStart) / ($(window).width() / 100)
+		console.log(touchOffset, translate)
+		if(touchOffset < 0 || translate >= 0) {
+			return false
+		}
+
+		
+
+		$(this).css('transition', 'none')
+		$(this).css('transform', 'translateX('+ (touchOffset + translate) + '%)')
+		
+	})
+
+	$levels.on('touchend', function() {
+		$(this).css('transition', '')
+		$(this).css('transform', '')
+
+		if(touchOffset > 10) {
+			if(translate == -100) {
+				closeLevel2();
+			} else if( translate == -200) {
+				closeLevel3()
+			}
+		}
+	})
+	// hammerLevels.on('swipeleft', function(ev) {
+		
+	// 	translate += ev.deltaX
+	// 	console.log(ev)
+	// 	$levels.css('transform', 'translate('+translate+'px, 0)')
+	// });
+
+	// hammerLevels.on('swiperight', function(ev) {
+		
+	// 	translate -= ev.deltaX
+	// 	console.log(ev)
+	// 	$levels.css('transform', 'translate('+translate+'px, 0)')
+	// });
+
+	// hammerClose.on('panup', function(ev) {
+	// 	closeMenu();
+	// });
+	// $levels.get(0).hammer({}).bind("swipeleft", function(e) {
+	// 	console.log(e)
+	// });
 
 	function openLevel1() {
 		$navMobile.slideToggle();
@@ -131,6 +189,7 @@ $('.FieldSpinner').each(function() {
 		$level2.append($cur2);
 
 		$levels.addClass('NavMobile-Container_Level2');
+		translate = -100
 	}
 
 	function openLevel3() {
@@ -148,15 +207,18 @@ $('.FieldSpinner').each(function() {
 		$level3.append($cur3);
 
 		$levels.addClass('NavMobile-Container_Level3');
+		translate = - 200
 	}
 
 	function closeLevel2() {
 		$levels.removeClass('NavMobile-Container_Level2');
+		translate = 0
 		$('.NavTop-Link_Active').removeClass('NavTop-Link_Active');
 	}
 
 	function closeLevel3() {
 		$levels.removeClass('NavMobile-Container_Level3');
+		translate = -100
 		$('.NavTopSub-Link_Active').removeClass('NavTopSub-Link_Active');
 	}
 

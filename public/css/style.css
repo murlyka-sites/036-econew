@@ -2297,7 +2297,7 @@ html {
   top: 0;
   left: 0;
   right: 0;
-  padding-bottom: 80px;
+  padding-bottom: 60px;
   bottom: -60px;
   background: #fff;
   z-index: 10;
@@ -2305,6 +2305,7 @@ html {
 }
 .NavMobile-Container {
   height: 100%;
+  position: relative;
   transform: translate(0, 0);
   transition: 1s;
 }
@@ -2364,6 +2365,9 @@ html {
   -ms-flex: none;
       flex: none;
   cursor: pointer;
+}
+.NavMobile-Back {
+  margin-left: -9px;
 }
 @media (min-width: 992px) {
   .NavMobile-Back {

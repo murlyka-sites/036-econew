@@ -197,7 +197,7 @@ $('.NavSticky').each(function() {
 	let navOffset = 0;
 	let topicOffset = 0;
 	let $links = $('.NavSticky-Link, .NavSticky-Button.Button_Theme_Green');
-	let $button = $('.NavSticky-Button.Button_Theme_Green');
+	let $button = $('.NavSticky-Button.Button_Theme_Green2');
 	let minOffset = 0;
 	let maxOffset = 0;
 	let endOffset = 0;

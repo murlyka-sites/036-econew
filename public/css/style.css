@@ -825,9 +825,17 @@ html {
     margin-bottom: 20px;
   }
 }
+.Figure-Caption {
+  font-size: 12px;
+}
 @media (min-width: 768px) {
   .Figure-Caption {
     padding-left: 20px;
+  }
+}
+@media (min-width: 992px) {
+  .Figure-Caption {
+    font-size: 14px;
   }
 }
 .Figure-Caption_Small {

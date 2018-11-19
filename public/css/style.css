@@ -466,9 +466,13 @@
   box-sizing: border-box;
 }
 html {
+  height: 100%;
+  overflow: hidden;
   scroll-behavior: smooth;
 }
 .Page {
+  overflow-y: auto;
+  height: 100%;
   margin: 0;
   font-family: 'Open Sans', sans-serif;
 }
@@ -3554,6 +3558,10 @@ html {
   font-weight: 600;
 }
 .ListCat-Link {
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   position: relative;
   padding-left: 15px;
   -webkit-hyphens: auto;
@@ -3572,7 +3580,7 @@ html {
   transform: translate(0, -50%) rotate(45deg);
   position: absolute;
   left: 0px;
-  top: 0.8em;
+  top: 0.75em;
 }
 .CMainProductNav {
   stroke: #3f9ae3;

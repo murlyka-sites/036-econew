@@ -48,11 +48,14 @@ fa() {
 }
 
 html {
-	
+	height 100%
+	overflow hidden
 	scroll-behavior smooth
 }
 
 .Page {
+	overflow-y auto
+	height 100%
 	margin 0
 	font-family 'Open Sans', sans-serif
 	&_Lock {
@@ -1561,10 +1564,13 @@ html {
 	text-align left
 	font-weight 600 
 	
-	&-Link {		
+	&-Link {
+		display inline-flex
+		flex-wrap wrap
 		position relative
 		padding-left 15px
 		hyphens auto
+		
 		&:hover {
 			text-decoration none
 		}
@@ -1578,7 +1584,7 @@ html {
 			transform translate(0, -50%) rotate(45deg)
 			position absolute
 			left 0px
-			top 0.8em
+			top 0.75em
 			
 		}
 		

@@ -466,13 +466,9 @@
   box-sizing: border-box;
 }
 html {
-  height: 100%;
-  overflow: hidden;
   scroll-behavior: smooth;
 }
 .Page {
-  overflow-y: auto;
-  height: 100%;
   margin: 0;
   font-family: 'Open Sans', sans-serif;
 }

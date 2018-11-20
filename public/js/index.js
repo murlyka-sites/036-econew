@@ -324,7 +324,7 @@ $('.CalcRecAvailable-Title').hover(function() {
 
 	let src = $(this).data('src');
 	$('.CalcRecAvailable-Pr').attr('src', src);
-})
+});
 $('.SMainProduct').each(function() {
 	$slider = $(this).find('.SMainProduct-Slider');
 	$pagination = $(this).find('.SMainProduct-Pagination');
@@ -413,8 +413,9 @@ $('.SMainProduct').each(function() {
 
 	function openLevel1() {
 		$navMobile.slideToggle();
-		$page.toggleClass('Page_Lock');
+		
 		$burger.toggleClass('active');
+		scrollLock(true)
 
 		if($cur1) {
 			$cur1.remove();
@@ -486,20 +487,29 @@ $('.SMainProduct').each(function() {
 	function openMenu() {
 		isOpen = true;
 		$navMobile.slideDown();
-		$page.addClass('Page_Lock');
+		scrollLock(true);
 		console.log($burger)
 	}
 
 	function closeMenu() {
 		isOpen = false
 		$navMobile.slideUp();
-		$page.removeClass('Page_Lock');
+		scrollLock(false);
 		$burger.removeClass('active');
+
 	}
 
 	function init() {
 		let offset = $('.Nav').outerHeight() + $('.Header').outerHeight();
 
 		$navMobile.css('padding-top', offset);
+	}
+
+	function scrollLock(lock) {
+		if(lock) {
+			$('html, body').css('overflow', 'hidden');
+		} else {
+			$('html, body').css('overflow', 'auto')
+		}
 	}
 })();

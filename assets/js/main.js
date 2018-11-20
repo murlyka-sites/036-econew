@@ -324,4 +324,4 @@ $('.CalcRecAvailable-Title').hover(function() {
 
 	let src = $(this).data('src');
 	$('.CalcRecAvailable-Pr').attr('src', src);
-})
+});

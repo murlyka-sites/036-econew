@@ -85,7 +85,7 @@ $('.NavSticky').each(function() {
 	let links = [];
 	let navOffset = 0;
 	let topicOffset = 0;
-	let $links = $('.NavSticky-Link, .NavSticky-Button.Button_Theme_Green');
+	let $links = $('.NavSticky-Link, .NavSticky-Button.Button_Theme_Green2');
 	let $button = $('.NavSticky-Button.Button_Theme_Green2');
 	let minOffset = 0;
 	let maxOffset = 0;
@@ -150,7 +150,6 @@ $('.NavSticky').each(function() {
 	$(window).resize(init)
 
 	init();
-	// console.log(links);
 });
 
 

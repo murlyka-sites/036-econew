@@ -26,12 +26,12 @@ $('.TopicSliderMain-Title').click(function() {
 
 
 $('.FieldSpinner').each(function() {
-	let $f = $(this).find('.FieldSpinner-Field')
-	let $up = $(this).find('.FieldSpinner-Button_Up')
-	let $down = $(this).find('.FieldSpinner-Button_Down')
-	let value = 0;
-	let min = parseInt($f.attr('min'));
-	let max = parseInt($f.attr('max'));
+	var $f = $(this).find('.FieldSpinner-Field')
+	var $up = $(this).find('.FieldSpinner-Button_Up')
+	var $down = $(this).find('.FieldSpinner-Button_Down')
+	var value = 0;
+	var min = parseInt($f.attr('min'));
+	var max = parseInt($f.attr('max'));
 
 	getValue();
 
@@ -82,14 +82,14 @@ $('.NavSticky-Choosen').blur(function() {
 
 // left sidebar
 $('.NavSticky').each(function() {
-	let links = [];
-	let navOffset = 0;
-	let topicOffset = 0;
-	let $links = $('.NavSticky-Link, .NavSticky-Button.Button_Theme_Green2');
-	let $button = $('.NavSticky-Button.Button_Theme_Green2');
-	let minOffset = 0;
-	let maxOffset = 0;
-	let endOffset = 0;
+	var links = [];
+	var navOffset = 0;
+	var topicOffset = 0;
+	var $links = $('.NavSticky-Link, .NavSticky-Button.Button_Theme_Green2');
+	var $button = $('.NavSticky-Button.Button_Theme_Green2');
+	var minOffset = 0;
+	var maxOffset = 0;
+	var endOffset = 0;
 
 	function init() {
 		navOffset = $('.Topic-Sticky').offset().top;
@@ -97,25 +97,25 @@ $('.NavSticky').each(function() {
 		 // - ($('.ToOrder-Button').outerHeight() / 2);
 
 		$links.each(function() {
-			let link = {};
-			let $s = $($(this).attr('href'));
-			let linkOffset = navOffset - $(this).offset().top - ($(this).outerHeight() / 2);
+			var link = {};
+			var $s = $($(this).attr('href'));
+			var linkOffset = navOffset - $(this).offset().top - ($(this).outerHeight() / 2);
 			link.offset = $s.offset().top + linkOffset;
 			link.$e = $(this);
 			links.push(link);
 		});
 
-		let buttonOffset =  $button.offset().top - navOffset - ($button.outerHeight() / 2)
+		var buttonOffset =  $button.offset().top - navOffset - ($button.outerHeight() / 2)
 		minOffset = topicOffset;
 		maxOffset = $('.ToOrder-Button').offset().top - ($('.ToOrder-Button').outerHeight() / 2) - buttonOffset 
 		endOffset = maxOffset - topicOffset
 
-		let linkOffset = $button.offset().top - navOffset  + ($button.outerHeight() / 2)
+		var linkOffset = $button.offset().top - navOffset  + ($button.outerHeight() / 2)
 	}
 
 	$(window).scroll(function() {
 		init();
-		let offset = window.pageYOffset
+		var offset = window.pageYOffset
 
 		if($(window).width() < 768) {
 			return false;
@@ -207,7 +207,7 @@ $('.TopicSlider').each(function() {
 	})
 
 	$('.TopicSliderThumb-Slide').click(function() {
-		let index = $(this).index();
+		var index = $(this).index();
 		main.slideTo(index + 1);
 		// toSlide(index);
 	});
@@ -220,12 +220,12 @@ $('.TopicSlider').each(function() {
 
 $('.SProjects').each(function() {
 	var swiper;
-	let $slider = $(this).find('.SProjects-Slider');
-	let $tab = $(this).find('.SProjects-Tab');
-	let $current = $(this).find('.SProjects-Current');
-	let $prev = $(this).find('.SProjects-Prev');
-	let $next = $(this).find('.SProjects-Next');
-	let $pagination = $(this).find('.SProjects-Pagination');
+	var $slider = $(this).find('.SProjects-Slider');
+	var $tab = $(this).find('.SProjects-Tab');
+	var $current = $(this).find('.SProjects-Current');
+	var $prev = $(this).find('.SProjects-Prev');
+	var $next = $(this).find('.SProjects-Next');
+	var $pagination = $(this).find('.SProjects-Pagination');
 
 	$(this).find('.non-swiper-slide[data-cat=1]').addClass('swiper-slide').removeClass('non-swiper-slide');
 
@@ -245,7 +245,7 @@ $('.SProjects').each(function() {
 			$current.text($(this).text())
 		}
 
-		let cat = $(this).data('cat');
+		var cat = $(this).data('cat');
 
 		$slider.find('.swiper-slide:not([data-cat='+cat+'])').removeClass('swiper-slide').addClass('non-swiper-slide');
 		$slider.find('.non-swiper-slide[data-cat='+cat+']').addClass('swiper-slide').removeClass('non-swiper-slide');
@@ -321,17 +321,20 @@ $('.CalcRecAvailable-Title').hover(function() {
 	$('.CalcRecAvailable-Title').removeClass('active');
 	$(this).addClass('active')
 
-	let src = $(this).data('src');
+	var src = $(this).data('src');
 	$('.CalcRecAvailable-Pr').attr('src', src);
 });
 $('.SMainProduct').each(function() {
-	$slider = $(this).find('.SMainProduct-Slider');
-	$pagination = $(this).find('.SMainProduct-Pagination');
-	$bullets = $(this).find('.CMainProductNav');
+	var $slider = $(this).find('.SMainProduct-Slider');
+	var $pagination = $(this).find('.SMainProduct-Pagination');
+	var $bullets = $(this).find('.CMainProductNav');
+	var $prev = $(this).find('.SMainProduct-Prev');
+	var $next = $(this).find('.SMainProduct-Next');
 
 	swiper = new Swiper($slider, {
 		speed: 400,
 		spaceBetween: 30,
+		loop: true,
 		effect: 'fade',
 		autoHeight: true,
 		fadeEffect: {
@@ -347,23 +350,27 @@ $('.SMainProduct').each(function() {
 			clickable: true,
 			bulletClass: 'SMainProduct-Bullet',
 			bulletActiveClass: 'active'
+		},
+		navigation: {
+			nextEl: $next,
+			prevEl: $prev
 		}
 	});
 
 })
 ;// Мобильное меню
 (function() {
-	let $navMobile = $('.NavMobile');
-	let $page = $('.Page');
-	let $burger = $('.Nav-Burger');
-	let $close = $('.NavMobile-Close');
-	let $levels = $('.NavMobile-Container');
-	let $level1 = $('.NavMobile-Level:nth-child(1)')
-	let $level2 = $('.NavMobile-Level:nth-child(2)')
-	let $level3 = $('.NavMobile-Level:nth-child(3)')
-	let translate = 0;
-	let $cur1, $cur2, $cur3;
-	let isOpen = false;
+	var $navMobile = $('.NavMobile');
+	var $page = $('.Page');
+	var $burger = $('.Nav-Burger');
+	var $close = $('.NavMobile-Close');
+	var $levels = $('.NavMobile-Container');
+	var $level1 = $('.NavMobile-Level:nth-child(1)')
+	var $level2 = $('.NavMobile-Level:nth-child(2)')
+	var $level3 = $('.NavMobile-Level:nth-child(3)')
+	var translate = 0;
+	var $cur1, $cur2, $cur3;
+	var isOpen = false;
 
 	$burger.click(openLevel1);
 	$close.click(closeMenu);
@@ -376,8 +383,8 @@ $('.SMainProduct').each(function() {
 	init();
 
 	$(window).resize(init);
-	let touchStart = 0;
-	let touchOffset = 0;
+	var touchStart = 0;
+	var touchOffset = 0;
 
 	$levels.on('touchstart', function(e) {
 		touchStart =  e.changedTouches[0].pageX
@@ -434,7 +441,7 @@ $('.SMainProduct').each(function() {
 		
 
 
-		let $open = $(this).next().find('.NavTopSub');
+		var $open = $(this).next().find('.NavTopSub');
 
 		$('.NavTop-Link_Active').removeClass('NavTop-Link_Active');
 		$(this).addClass('NavTop-Link_Active');
@@ -454,7 +461,7 @@ $('.SMainProduct').each(function() {
 	}
 
 	function openLevel3() {
-		let $open = $(this).next().find('.NavTopSubContent');
+		var $open = $(this).next().find('.NavTopSubContent');
 
 		if($cur3) {
 			$cur3.remove();
@@ -499,7 +506,7 @@ $('.SMainProduct').each(function() {
 	}
 
 	function init() {
-		let offset = $('.Nav').outerHeight() + $('.Header').outerHeight();
+		var offset = $('.Nav').outerHeight() + $('.Header').outerHeight();
 
 		$navMobile.css('padding-top', offset);
 	}

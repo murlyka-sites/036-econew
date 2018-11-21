@@ -1,16 +1,16 @@
 ;// Мобильное меню
 (function() {
-	let $navMobile = $('.NavMobile');
-	let $page = $('.Page');
-	let $burger = $('.Nav-Burger');
-	let $close = $('.NavMobile-Close');
-	let $levels = $('.NavMobile-Container');
-	let $level1 = $('.NavMobile-Level:nth-child(1)')
-	let $level2 = $('.NavMobile-Level:nth-child(2)')
-	let $level3 = $('.NavMobile-Level:nth-child(3)')
-	let translate = 0;
-	let $cur1, $cur2, $cur3;
-	let isOpen = false;
+	var $navMobile = $('.NavMobile');
+	var $page = $('.Page');
+	var $burger = $('.Nav-Burger');
+	var $close = $('.NavMobile-Close');
+	var $levels = $('.NavMobile-Container');
+	var $level1 = $('.NavMobile-Level:nth-child(1)')
+	var $level2 = $('.NavMobile-Level:nth-child(2)')
+	var $level3 = $('.NavMobile-Level:nth-child(3)')
+	var translate = 0;
+	var $cur1, $cur2, $cur3;
+	var isOpen = false;
 
 	$burger.click(openLevel1);
 	$close.click(closeMenu);
@@ -23,8 +23,8 @@
 	init();
 
 	$(window).resize(init);
-	let touchStart = 0;
-	let touchOffset = 0;
+	var touchStart = 0;
+	var touchOffset = 0;
 
 	$levels.on('touchstart', function(e) {
 		touchStart =  e.changedTouches[0].pageX
@@ -81,7 +81,7 @@
 		
 
 
-		let $open = $(this).next().find('.NavTopSub');
+		var $open = $(this).next().find('.NavTopSub');
 
 		$('.NavTop-Link_Active').removeClass('NavTop-Link_Active');
 		$(this).addClass('NavTop-Link_Active');
@@ -101,7 +101,7 @@
 	}
 
 	function openLevel3() {
-		let $open = $(this).next().find('.NavTopSubContent');
+		var $open = $(this).next().find('.NavTopSubContent');
 
 		if($cur3) {
 			$cur3.remove();
@@ -146,7 +146,7 @@
 	}
 
 	function init() {
-		let offset = $('.Nav').outerHeight() + $('.Header').outerHeight();
+		var offset = $('.Nav').outerHeight() + $('.Header').outerHeight();
 
 		$navMobile.css('padding-top', offset);
 	}

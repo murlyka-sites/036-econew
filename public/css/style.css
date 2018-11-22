@@ -470,10 +470,16 @@ html {
 }
 .Page {
   margin: 0;
+  height: auto;
   font-family: 'Open Sans', sans-serif;
 }
 .Page_Lock {
   overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 .Topic {
   padding-top: 20px;
@@ -2343,11 +2349,15 @@ html {
   }
   .NavMobile-Level:nth-child(2) {
     width: 33.33%;
+    -ms-touch-action: pan-left;
+        touch-action: pan-left;
   }
   .NavMobile-Level:nth-child(3) {
     width: 100%;
     -ms-flex: auto;
         flex: auto;
+    -ms-touch-action: pan-left;
+        touch-action: pan-left;
   }
 }
 .NavMobile-Back,

@@ -385,17 +385,26 @@ $('.SMainProduct').each(function() {
 	$(window).resize(init);
 	var touchStart = 0;
 	var touchOffset = 0;
+	var lastTouch;
 
 	$levels.on('touchstart', function(e) {
 		touchStart =  e.changedTouches[0].pageX
+		lastTouch = e.changedTouches[0];
 	})
 
 	$levels.on('touchmove', function(e) {
 		touchOffset = (e.changedTouches[0].pageX - touchStart) / ($(window).width() / 100)
-		console.log(touchOffset, translate)
+		// var  x = Math.abs(lastTouch.pageX - e.changedTouches[0].pageX);
+		// var y = Math.abs(lastTouch.pageY - e.changedTouches[0].pageY);
+		// console.log(x, y)
+		// if(y > x) {
+		// 	return 
+		// }
 		if(touchOffset < 0 || translate >= 0) {
-			return false
+			return 
 		}
+
+
 
 		
 
@@ -431,9 +440,9 @@ $('.SMainProduct').each(function() {
 	}
 
 	function openLevel2() {
-		if(isOpen && $(this).hasClass('NavTop-Link_Active')) {
+		if(isOpen && $(this).hasClass('active')) {
 			closeMenu();
-			$(this).removeClass('NavTop-Link_Active')
+			$(this).removeClass('active')
 			return false
 		} else {
 			openMenu();
@@ -443,8 +452,8 @@ $('.SMainProduct').each(function() {
 
 		var $open = $(this).next().find('.NavTopSub');
 
-		$('.NavTop-Link_Active').removeClass('NavTop-Link_Active');
-		$(this).addClass('NavTop-Link_Active');
+		$('.NavTop-Link.active').removeClass('active');
+		$(this).addClass('active');
 
 		if($cur2) {
 			$cur2.remove();
@@ -481,7 +490,7 @@ $('.SMainProduct').each(function() {
 	function closeLevel2() {
 		$levels.removeClass('NavMobile-Container_Level2');
 		translate = 0
-		$('.NavTop-Link_Active').removeClass('NavTop-Link_Active');
+		$('.NavTop-Link.active').removeClass('active');
 	}
 
 	function closeLevel3() {
@@ -513,9 +522,9 @@ $('.SMainProduct').each(function() {
 
 	function scrollLock(lock) {
 		if(lock) {
-			$('html, body').css('overflow', 'hidden');
+			$('.Page').addClass('Page_Lock');
 		} else {
-			$('html, body').css('overflow', 'auto')
+			$('.Page').removeClass('Page_Lock');
 		}
 	}
 })();

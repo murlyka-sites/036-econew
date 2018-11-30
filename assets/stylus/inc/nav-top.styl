@@ -1,31 +1,23 @@
 .NavMobile {
-	display none
 	position fixed
 	top 0
 	left 0
-	right 0
-	padding-bottom 60px 
-	bottom -60px
+	width 100%
+	height 100%
+	transform translateY(-100%)
 	background white
 	z-index 10
 	overflow hidden
+	transition transform 1s
 	
 	&-Container {
 		height 100%
 		position relative
 		transform translate(0, 0)
-		transition 1s 
-		
-		&_Level2 {
-			transform translate(-100%, 0)
-		}
-		
-		&_Level3 {
-			transform translate(-200%, 0)
-		}
+		transition 1s
 		
 		@media (min-width: $breakpoint-lg) {
-			transform none
+			transform none !important
 			transition none
 		}
 	}
@@ -35,11 +27,12 @@
 		border-top 1px solid #f7f7f7
 		height 100%
 		width 100%
-		overflow hidden auto
+		overflow auto
 		display flex
-		padding 15px 15px 5px
+		padding 15px 15px 35px
 		flex-direction column
 		flex none
+		-webkit-overflow-scrolling: touch
 		
 		&:nth-child(even) {
 			background #f7f7f7
@@ -86,7 +79,7 @@
 	
 	&-Close {
 		position absolute
-		bottom 60px
+		bottom 0
 		left 0
 		margin auto auto 0
 		flex none
@@ -101,7 +94,8 @@
 	padding 10px 0
 	box-shadow 2px 3px 7px rgba(12, 4, 5, 0.08)
 	z-index 11
-	background white  
+	background white
+	
 	
 	@media (min-width: $breakpoint-lg) {
 		justify-content flex-start
@@ -266,7 +260,7 @@
 		}
 		
 		&:hover,
-		&_Active {
+		&.active {
 			color: #1c75bc;
 			background-color: #e5e5e5;
 			text-decoration none

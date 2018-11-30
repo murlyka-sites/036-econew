@@ -5,7 +5,7 @@ $('.SMainProduct').each(function() {
 	var $prev = $(this).find('.SMainProduct-Prev');
 	var $next = $(this).find('.SMainProduct-Next');
 
-	swiper = new Swiper($slider, {
+	var swiper = new Swiper($slider, {
 		speed: 400,
 		spaceBetween: 30,
 		loop: true,

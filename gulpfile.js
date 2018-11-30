@@ -3,7 +3,8 @@ var gulp = require('gulp'),
 	stylus = require('gulp-stylus'),
 	imagemin = require('gulp-imagemin'),
     autoprefixer = require('gulp-autoprefixer'),
-	concat = require('gulp-concat');
+	concat = require('gulp-concat'),
+    babel = require('gulp-babel');
 var browserSync = require('browser-sync').create();
 var outputDir = 'public';
 var assetDir = 'assets';
@@ -55,7 +56,10 @@ gulp.task('jade', function() {
 // �������� JS
 gulp.task('js', function() {
     gulp.src([assetDir+'/js/**/*.js', '!'+assetDir+'/js/vendor/**/*.js'])
-        .pipe(concat('index.js')) // �������� ��� JS, ����� ��� ������� ��������� � ./assets/js/vendor/**
+        .pipe(concat('index.js'))
+        .pipe(babel({
+           presets: ['@babel/env']
+        })) // �������� ��� JS, ����� ��� ������� ��������� � ./assets/js/vendor/**
         .pipe(gulp.dest(outputDir+'/js'))
         .pipe(browserSync.stream()); // ���� ������� �� ������������ ��������
 });

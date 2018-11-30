@@ -469,8 +469,8 @@ html {
   scroll-behavior: smooth;
 }
 .Page {
+  overflow: auto;
   margin: 0;
-  height: auto;
   font-family: 'Open Sans', sans-serif;
 }
 .Page_Lock {
@@ -2297,16 +2297,16 @@ html {
   margin-bottom: 15px;
 }
 .NavMobile {
-  display: none;
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
-  padding-bottom: 60px;
-  bottom: -60px;
+  width: 100%;
+  height: 100%;
+  transform: translateY(-100%);
   background: #fff;
   z-index: 10;
   overflow: hidden;
+  transition: transform 1s;
 }
 .NavMobile-Container {
   height: 100%;
@@ -2314,15 +2314,9 @@ html {
   transform: translate(0, 0);
   transition: 1s;
 }
-.NavMobile-Container_Level2 {
-  transform: translate(-100%, 0);
-}
-.NavMobile-Container_Level3 {
-  transform: translate(-200%, 0);
-}
 @media (min-width: 992px) {
   .NavMobile-Container {
-    transform: none;
+    transform: none !important;
     transition: none;
   }
 }
@@ -2331,14 +2325,15 @@ html {
   border-top: 1px solid #f7f7f7;
   height: 100%;
   width: 100%;
-  overflow: hidden auto;
+  overflow: auto;
   display: -ms-flexbox;
   display: flex;
-  padding: 15px 15px 5px;
+  padding: 15px 15px 35px;
   -ms-flex-direction: column;
       flex-direction: column;
   -ms-flex: none;
       flex: none;
+  -webkit-overflow-scrolling: touch;
 }
 .NavMobile-Level:nth-child(even) {
   background: #f7f7f7;
@@ -2386,7 +2381,7 @@ html {
 }
 .NavMobile-Close {
   position: absolute;
-  bottom: 60px;
+  bottom: 0;
   left: 0;
   margin: auto auto 0;
   -ms-flex: none;
@@ -2574,13 +2569,13 @@ html {
   -moz-osx-font-smoothing: grayscale;
 }
 .NavTopSub-Link:hover,
-.NavTopSub-Link_Active {
+.NavTopSub-Link.active {
   color: #1c75bc;
   background-color: #e5e5e5;
   text-decoration: none;
 }
 .NavTopSub-Link:hover::after,
-.NavTopSub-Link_Active::after {
+.NavTopSub-Link.active::after {
   opacity: 1;
 }
 .NavTopSub-Content {

@@ -296,7 +296,7 @@ $('.CEdge-Title').click(function () {
 });
 
 $('.SClient').each(function() {
-	mySwiper = new Swiper($(this).find('.SClient-Slider'), {
+	var mySwiper = new Swiper($(this).find('.SClient-Slider'), {
     speed: 400,
     loop: true,
     slidesPerView: 'auto',

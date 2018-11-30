@@ -16,9 +16,12 @@
   "author": "Nikita Nafranets",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.1.6",
+    "@babel/preset-env": "^7.1.6",
     "browser-sync": "^2.9.8",
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "^3.0.2",
+    "gulp-babel": "^8.0.0",
     "gulp-concat": "^2.6.0",
     "gulp-imagemin": "^2.3.0",
     "gulp-jade": "^1.1.0",
